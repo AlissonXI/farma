@@ -1,0 +1,2386 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia completo, interativo e visualmente aprimorado sobre controle de qualidade em laboratórios farmacêuticos, abordando análises de sólidos e semissólidos, justificativa e objetivos.">
+    <meta name="keywords" content="controle de qualidade, farmácia, laboratório, análise físico-química, medicamentos, cosméticos, RDC 67/2007, boas práticas de manipulação, guia farmacêutico, peso médio, dureza, friabilidade, desintegração, dissolução, ponto de fusão, teor, densidade, viscosidade, pH, espalhabilidade, extrusão, endotoxinas, contagem microbiológica, TCC Farmácia, guia visual, interativo">
+    <meta name="author" content="Ana Flávia Barbosa Teixeira, Carolina Silva de Azevedo, Giovana Clara dos Santos Ribeiro, Jessica Santos de Lima">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⚕️%3C/text%3E%3C/svg%3E">
+    <!-- Consider adding fallback icons for wider compatibility -->
+    <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+
+    <title>Guia Visual Interativo: Controle de Qualidade Farmacêutico</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: hsl(208, 88%, 53%);
+            --primary-dark: hsl(208, 88%, 43%);
+            --primary-light: hsl(208, 80%, 96%);
+            --secondary-color: hsl(175, 68%, 45%);
+            --secondary-dark: hsl(175, 68%, 35%);
+            --accent-color: hsl(45, 100%, 58%);
+            --accent-dark: hsl(45, 100%, 48%);
+            --light-bg: hsl(210, 40%, 99%);
+            --white-color: #ffffff;
+            --dark-bg: hsl(215, 30%, 15%);
+            --text-dark: hsl(215, 28%, 22%);
+            --text-medium: hsl(215, 18%, 44%);
+            --text-light: hsl(210, 25%, 96%);
+            --success-color: hsl(145, 68%, 40%);
+            --info-color: hsl(195, 75%, 52%);
+            --warning-color: hsl(38, 95%, 58%);
+            --danger-color: hsl(0, 78%, 55%);
+            --shadow-sm: 0 3px 6px hsla(210, 50%, 20%, 0.07);
+            --shadow: 0 7px 20px hsla(210, 50%, 20%, 0.11);
+            --shadow-lg: 0 12px 35px hsla(210, 50%, 20%, 0.16);
+            --shadow-inset: inset 0 2px 5px hsla(210, 50%, 20%, 0.08);
+            --border-radius-sm: 6px;
+            --border-radius: 10px;
+            --border-radius-lg: 18px;
+            --border-radius-pill: 50px;
+            --transition-fast: all 0.2s ease-in-out;
+            --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition-slow: all 0.5s ease-in-out;
+            --font-family-primary: 'Montserrat', sans-serif;
+            --font-family-secondary: 'Roboto', sans-serif;
+            --line-height-base: 1.85;
+            --line-height-heading: 1.3;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-header: linear-gradient(120deg, hsla(208, 88%, 53%, 0.97) 0%, hsla(175, 68%, 45%, 0.94) 100%);
+            --gradient-modal-header: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            --gradient-info-card: linear-gradient(135deg, var(--secondary-color), var(--info-color));
+            --gradient-heading-underline: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1.25rem;
+            --space-lg: 2rem;
+            --space-xl: 3.5rem;
+            --space-xxl: 5.5rem;
+            --preloader-bg: var(--white-color);
+            --spinner-color: var(--primary-color);
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--preloader-bg);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        #preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid hsla(208, 88%, 53%, 0.2);
+            border-top-color: var(--spinner-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-family-secondary);
+            line-height: var(--line-height-base);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-primary);
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.025em;
+            line-height: var(--line-height-heading);
+            margin-top: 0;
+            margin-bottom: var(--space-md);
+        }
+
+        p {
+           margin-bottom: var(--space-md);
+           color: var(--text-medium);
+           max-width: 850px;
+           text-align: justify;
+           margin-left: auto;
+           margin-right: auto;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            text-align: center;
+            max-width: 900px;
+            margin-bottom: var(--space-lg);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        strong, b {
+             font-weight: 600;
+             color: var(--primary-dark);
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* Ensure image paths are correct relative to HTML file */
+        .hero-header {
+            /* Double check 'lab-students-serra-dourada.jpg' exists at this path */
+            background: var(--gradient-header), url('lab-students-serra-dourada.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--white-color);
+            padding: var(--space-xxl) 0 var(--space-xl) 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-bottom: 7px solid var(--secondary-color);
+            overflow: hidden;
+        }
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
+            z-index: -1;
+        }
+        .hero-header .container {
+             position: relative;
+             z-index: 3;
+        }
+        .hero-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+            text-shadow: 2px 3px 12px rgba(0, 0, 0, 0.65);
+            color: var(--white-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+        }
+        .hero-header h1 i {
+            color: var(--accent-color);
+            font-size: 1.2em;
+            margin-bottom: var(--space-xs);
+            filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.5));
+        }
+        .hero-header .main-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            display: block;
+            margin-top: var(--space-sm);
+            letter-spacing: 0.02em;
+        }
+        .hero-header .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            letter-spacing: 0.05em;
+            margin-top: var(--space-xs);
+            display: block;
+        }
+        .hero-header .sub-headline {
+            font-size: 1.4rem;
+            margin-bottom: var(--space-lg);
+            font-family: var(--font-family-secondary);
+            font-weight: 300;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: var(--space-md);
+            text-align: center;
+        }
+        .hero-header .typed-text {
+            font-weight: 500;
+            color: var(--accent-color);
+            border-bottom: 2px dotted hsla(0, 0%, 100%, 0.65);
+            padding-bottom: 3px;
+        }
+        .hero-header .authors {
+            font-size: 0.9rem;
+            font-style: normal;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.97;
+            background: rgba(0, 0, 0, 0.4);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--border-radius);
+            display: inline-block;
+            line-height: 1.7;
+            border: 1px solid hsla(0, 0%, 100%, 0.1);
+            text-align: center;
+        }
+        .hero-header .authors strong {
+            font-weight: 600;
+            color: var(--white-color);
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-size: 1.05em;
+        }
+        .hero-header .authors span {
+            display: block;
+            margin-top: var(--space-xs);
+        }
+         .hero-header .authors .student-info {
+            display: block;
+            margin-top: var(--space-sm);
+            font-size: 0.9em;
+            opacity: 0.85;
+        }
+        .hero-header .authors img {
+            max-width: 250px; /* Bootstrap's img-fluid will handle responsiveness */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: var(--border-radius-sm);
+            margin-top: var(--space-md);
+            border: 3px solid var(--white-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section {
+            padding: var(--space-xl) 0;
+            position: relative;
+            overflow: hidden; /* Helps contain floated/positioned elements */
+        }
+        .content-section:nth-of-type(odd) {
+            background-color: var(--white-color);
+        }
+        .content-section:nth-of-type(even) {
+            background-color: var(--primary-light);
+        }
+        #bibliografia {
+             background-color: var(--white-color);
+        }
+        #sumario {
+             padding-top: var(--space-lg);
+             background-color: var(--primary-light);
+        }
+        .content-section h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: var(--space-xl);
+            text-align: center;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+        }
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130px;
+            height: 5px;
+            background: var(--gradient-heading-underline);
+            border-radius: var(--border-radius-sm);
+            transition: width 0.4s ease;
+        }
+         .content-section h2:hover::after {
+             width: 160px;
+         }
+        .content-section h2 i {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 0.9em;
+        }
+        .content-section p {
+            text-align: justify;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .content-section p.text-center,
+        .content-section .text-center p {
+            text-align: center !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .content-section .text-center img {
+             border-radius: var(--border-radius-lg);
+             box-shadow: var(--shadow-lg);
+             border: 8px solid var(--white-color);
+             margin-top: var(--space-lg);
+             margin-bottom: var(--space-xl);
+             max-width: 85%; /* Responsive width */
+             height: auto; /* Maintain aspect ratio */
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+        }
+
+        .objective-list {
+            list-style: none;
+            padding-left: 0;
+            max-width: 850px;
+            margin: var(--space-xl) auto;
+            display: grid;
+            gap: var(--space-md);
+        }
+        .objective-list li {
+            background-color: var(--white-color);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            border-left: 7px solid var(--success-color);
+        }
+        .objective-list li:hover {
+            transform: translateY(-7px) scale(1.025);
+            box-shadow: var(--shadow-lg);
+            border-left-color: var(--accent-color);
+        }
+        .objective-list li i {
+            color: var(--success-color);
+            font-size: 1.8rem;
+            margin-right: var(--space-md);
+            margin-top: 0.15rem;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        .objective-list li:hover i {
+             color: var(--accent-color);
+             transform: rotate(15deg) scale(1.1);
+         }
+         .objective-list li span {
+            flex-grow: 1;
+            color: var(--text-medium);
+            text-align: justify;
+            /* Improve word breaking for long words in justified text */
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+         }
+         .objective-list li strong {
+             color: var(--primary-dark);
+             font-weight: 500;
+         }
+
+        .analysis-card {
+            background-color: var(--white-color);
+            border: 1px solid hsl(210, 25%, 93%);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin-bottom: var(--space-lg);
+        }
+        .analysis-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        .analysis-card .card-img-top {
+            width: 100%;
+            height: 240px; /* Fixed height, object-fit crops */
+            object-fit: cover; /* Scales the image while preserving aspect ratio and filling space, cropping if necessary */
+            object-position: center; /* Center the image within the frame */
+            border-bottom: 1px solid hsl(210, 25%, 93%);
+            filter: contrast(1.0) saturate(1.0);
+            transition: filter 0.4s ease, transform 0.4s ease;
+            display: block; /* Remove potential extra space below image */
+        }
+        .analysis-card:hover .card-img-top {
+            filter: contrast(1.12) saturate(1.12) brightness(1.04);
+            transform: scale(1.04);
+        }
+        .analysis-card .card-body {
+            padding: var(--space-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .analysis-card .card-title {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .analysis-card .card-title i {
+             color: var(--primary-color);
+             font-size: 1.1em;
+             transition: transform 0.3s ease;
+         }
+        .analysis-card:hover .card-title i {
+             transform: scale(1.18) rotate(-9deg);
+         }
+        .analysis-card .card-text {
+            font-size: 1rem;
+            color: var(--text-medium);
+            line-height: 1.75;
+            margin-bottom: var(--space-md);
+            flex-grow: 1;
+            text-align: justify;
+            /* Improve word breaking */
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        .analysis-card .equipment-info {
+            font-size: 0.9rem;
+            font-style: normal;
+            font-weight: 500;
+            color: var(--secondary-dark);
+            margin-bottom: var(--space-lg);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background-color: var(--primary-light);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--border-radius-sm);
+            box-shadow: var(--shadow-inset);
+            width: fit-content;
+            /* Prevent long equipment lists from breaking layout */
+            flex-wrap: wrap;
+        }
+        .analysis-card .equipment-info i {
+            margin-right: 0.2rem;
+            color: var(--secondary-color);
+            font-size: 1.1em;
+        }
+        .analysis-card .btn-details {
+            background-color: var(--primary-color);
+            border: none;
+            color: var(--white-color);
+            font-weight: 500;
+            font-family: var(--font-family-primary);
+            padding: 0.75rem 1.7rem;
+            border-radius: var(--border-radius-pill);
+            transition: var(--transition);
+            align-self: flex-start;
+            margin-top: auto; /* Pushes button to the bottom */
+            box-shadow: 0 3px 8px hsla(208, 88%, 53%, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        .analysis-card .btn-details i {
+             font-size: 0.9em;
+             transition: transform 0.3s ease;
+         }
+        .analysis-card .btn-details:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 14px hsla(208, 88%, 43%, 0.48);
+            text-decoration: none;
+        }
+        .analysis-card .btn-details:hover i {
+             transform: translateX(5px);
+         }
+         .placeholder-card {
+            background-color: var(--primary-light);
+            border: 2px dashed var(--primary-color);
+            opacity: 0.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            height: 100%;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: var(--space-lg);
+            transition: var(--transition-fast);
+            text-align: center;
+         }
+         .placeholder-card:hover {
+             transform: none;
+             box-shadow: var(--shadow);
+             border-color: var(--primary-color);
+             opacity: 0.7;
+         }
+         .placeholder-card .card-body {
+             text-align: center;
+             color: var(--primary-dark);
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             padding: var(--space-lg);
+         }
+         .placeholder-card i {
+             font-size: 3rem;
+             margin-bottom: var(--space-sm);
+             color: var(--primary-color);
+         }
+         .placeholder-card .card-title {
+             justify-content: center;
+             font-size: 1.4rem;
+             margin-top: var(--space-sm);
+         }
+         .placeholder-card .card-text {
+             text-align: center;
+             color: var(--text-medium);
+             flex-grow: 0;
+         }
+
+        .info-card {
+            background: var(--gradient-info-card);
+            color: var(--white-color);
+            padding: var(--space-xl);
+            border-radius: var(--border-radius-lg);
+            margin-top: var(--space-xl);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .info-card::before {
+            content: "\f05a";
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            font-size: 13rem;
+            color: hsla(0, 0%, 100%, 0.07);
+            transform: rotate(-18deg);
+            z-index: 0;
+            transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Prevent icon from interfering with text selection */
+            pointer-events: none;
+        }
+        .info-card:hover::before {
+             transform: rotate(-8deg) scale(1.12);
+        }
+        .info-card h4 {
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: var(--space-md);
+            position: relative;
+            z-index: 1;
+            color: var(--white-color);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .info-card h4 i {
+             background-color: hsla(0, 0%, 100%, 0.18);
+             padding: 0.8rem;
+             border-radius: 50%;
+             font-size: 0.7em;
+             display: inline-flex;
+             justify-content: center;
+             align-items: center;
+         }
+        .info-card p {
+            color: hsla(0, 0%, 100%, 0.97);
+            font-size: 1.1rem;
+            line-height: var(--line-height-base);
+            max-width: 100%;
+            text-align: justify;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+            margin-bottom: 0;
+            /* Improve word breaking */
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+         .bibliography-list {
+            list-style: none;
+            padding-left: 0;
+            max-width: 980px;
+            margin: var(--space-xl) auto;
+        }
+        .bibliography-list li {
+            border-bottom: 1px solid hsl(210, 25%, 94%);
+            padding: var(--space-md) var(--space-sm);
+            font-size: 1rem;
+            color: var(--text-medium);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            transition: background-color 0.3s ease, border-left-color 0.3s ease;
+            border-radius: var(--border-radius-sm);
+            border-left: 4px solid transparent;
+            /* Ensure long URLs/text wrap correctly */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            hyphens: auto;
+            text-align: justify;
+        }
+        .bibliography-list li:hover {
+             background-color: hsla(45, 100%, 58%, 0.08);
+             border-left-color: var(--accent-color);
+             color: var(--text-dark);
+        }
+        .bibliography-list li:last-child {
+            border-bottom: none;
+        }
+        .bibliography-list li i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .bibliography-list li:hover i {
+            transform: scale(1.15);
+        }
+         .bibliography-list li span {
+            flex-grow: 1;
+         }
+
+        .sumario-list {
+            list-style: none;
+            padding-left: 0;
+            max-width: 600px;
+            margin: var(--space-xl) auto;
+            background-color: var(--white-color);
+            padding: var(--space-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+        .sumario-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-sm) 0;
+            border-bottom: 1px dashed hsl(210, 20%, 90%);
+            font-size: 1.1rem;
+            transition: background-color 0.2s ease;
+        }
+        .sumario-list li:last-child {
+            border-bottom: none;
+        }
+        .sumario-list li:hover {
+            background-color: hsla(208, 80%, 96%, 0.5);
+        }
+        .sumario-list li a {
+            color: var(--text-dark);
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            transition: color 0.2s ease;
+            /* Ensure link takes up available space */
+            flex-grow: 1;
+            margin-right: var(--space-sm); /* Space before page number */
+        }
+        .sumario-list li a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .sumario-list li a i {
+            color: var(--primary-color);
+            opacity: 0.8;
+            flex-shrink: 0; /* Prevent icon shrinking */
+        }
+        .sumario-list li span {
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: var(--primary-light);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--border-radius-pill);
+            font-size: 0.9em;
+            flex-shrink: 0; /* Prevent page number shrinking */
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            text-align: center;
+            padding: var(--space-xl) 0;
+            font-size: 0.98rem;
+            border-top: 7px solid var(--primary-color);
+            background-image: linear-gradient(45deg, hsla(0, 0%, 100%, 0.02) 25%, transparent 25%, transparent 75%, hsla(0, 0%, 100%, 0.02) 75%, hsla(0, 0%, 100%, 0.02)), linear-gradient(45deg, hsla(0, 0%, 100%, 0.02) 25%, transparent 25%, transparent 75%, hsla(0, 0%, 100%, 0.02) 75%, hsla(0, 0%, 100%, 0.02));
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            margin-top: var(--space-xxl);
+        }
+        footer p {
+            margin-bottom: var(--space-sm);
+            opacity: 0.85;
+            font-weight: 300;
+            color: var(--text-light);
+            text-align: center;
+            max-width: 100%; /* Ensure text wraps */
+            padding-left: var(--space-sm); /* Add padding for small screens */
+            padding-right: var(--space-sm);
+        }
+        footer p strong {
+             font-weight: 500;
+             color: var(--white-color);
+         }
+        footer .social-icons {
+            margin-top: var(--space-lg);
+        }
+        footer .social-icons a {
+            color: var(--text-light);
+            margin: 0 var(--space-sm);
+            font-size: 1.7rem;
+            transition: var(--transition);
+            display: inline-block;
+            opacity: 0.75;
+        }
+        footer .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-6px) scale(1.2);
+            opacity: 1;
+            text-decoration: none;
+        }
+
+        #btnScrollToTop {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            background: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            width: 58px;
+            height: 58px;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease, background-color 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #btnScrollToTop:hover {
+            background: var(--primary-dark);
+            transform: scale(1.12) translateY(-5px);
+            text-decoration: none;
+        }
+        #btnScrollToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            border-radius: var(--border-radius-lg);
+            border: none;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden; /* Contain content */
+        }
+        .modal-header {
+             background: var(--gradient-modal-header);
+             color: var(--white-color);
+             border-bottom: none;
+             padding: var(--space-md) var(--space-lg);
+        }
+        .modal-header .modal-title {
+             font-weight: 700;
+             font-size: 1.6rem;
+             letter-spacing: 0;
+             display: flex;
+             align-items: center;
+             gap: var(--space-sm);
+         }
+         .modal-header .modal-title i {
+             filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+         }
+        .modal-header .btn-close {
+             filter: invert(1) grayscale(100%) brightness(200%);
+             opacity: 0.85;
+             transition: opacity 0.3s ease, transform 0.3s ease;
+             font-size: 0.95rem;
+             padding: var(--space-sm);
+             background-size: 0.8em;
+        }
+        .modal-header .btn-close:hover {
+              opacity: 1;
+              transform: scale(1.15) rotate(90deg);
+              background-color: hsla(0, 0%, 0%, 0.1);
+              border-radius: 50%;
+          }
+        .modal-body {
+            padding: var(--space-lg) var(--space-xl);
+            line-height: var(--line-height-base);
+            /* Improve word breaking */
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        .modal-body h4 {
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-xs);
+            border-bottom: 4px solid var(--accent-color);
+            display: inline-block;
+        }
+        .modal-body h4:first-of-type {
+             margin-top: var(--space-sm);
+        }
+        .modal-body .modal-image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            justify-content: center;
+        }
+        .modal-body .modal-image-gallery a {
+            flex: 1 1 200px; /* Flex basis for responsiveness */
+            max-width: 250px; /* Max width per image */
+            display: block;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm); /* Add subtle shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .modal-body .modal-image-gallery a:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow);
+        }
+        /* Styling for the image inside the link */
+        .modal-body img.img-fluid {
+            border-radius: var(--border-radius); /* Match link border-radius */
+            /* Remove individual shadow and border, apply to link 'a' instead */
+            /* box-shadow: var(--shadow); */
+            /* border: 4px solid var(--white-color); */
+            width: 100%; /* Fill the 'a' tag */
+            height: 180px; /* Fixed height for uniform gallery */
+            object-fit: cover; /* Cover the area, cropping if needed */
+            object-position: center;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: block; /* Prevent extra space below image */
+        }
+         /* Hover effect specific to image if needed, but link hover is often sufficient */
+         /* .modal-body .modal-image-gallery a:hover img.img-fluid { */
+             /* transform: scale(1.05); */
+             /* box-shadow: var(--shadow-lg); */
+         /* } */
+        .modal-body ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        .modal-body ul li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid hsl(210, 25%, 95%);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            font-size: 1rem;
+            color: var(--text-medium);
+            text-align: justify;
+        }
+         .modal-body ul li:last-child {
+             border-bottom: none;
+         }
+        .modal-body ul li i {
+            color: var(--success-color);
+            font-size: 1.3rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+        .modal-footer {
+            border-top: 1px solid hsl(210, 20%, 93%);
+            background-color: var(--light-bg);
+            padding: var(--space-md) var(--space-lg);
+        }
+         .modal-footer .btn-secondary {
+             background-color: var(--secondary-color);
+             border-color: var(--secondary-color);
+             color: var(--white-color);
+             font-family: var(--font-family-primary);
+             font-weight: 500;
+             padding: 0.75rem 1.9rem;
+             border-radius: var(--border-radius-pill);
+             transition: var(--transition);
+         }
+         .modal-footer .btn-secondary:hover {
+              background-color: var(--secondary-dark);
+              border-color: var(--secondary-dark);
+              transform: translateY(-3px);
+              box-shadow: var(--shadow-sm);
+         }
+
+        .typed-cursor {
+            opacity: 1;
+            animation: typedjsBlink 0.75s infinite;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        @keyframes typedjsBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.0; }
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+
+        @media (max-width: 1200px) {
+             html { font-size: 15.5px; }
+             .analysis-card .card-img-top { height: 230px; }
+             .modal-body img.img-fluid { height: 170px; }
+        }
+
+        @media (max-width: 992px) {
+            html { font-size: 15px; }
+            .hero-header { padding: var(--space-xl) 0 var(--space-lg) 0; }
+            .hero-header h1 { font-size: 2.5rem; }
+            .hero-header .main-title { font-size: 2rem; }
+            .hero-header .subtitle { font-size: 1.1rem; }
+            .hero-header .sub-headline { font-size: 1.3rem; max-width: 680px; }
+            .content-section { padding: var(--space-lg) 0; }
+            #sumario { padding-top: var(--space-lg); }
+            .content-section h2 { font-size: 2.3rem; margin-bottom: var(--space-lg); }
+            .analysis-card .card-img-top { height: 220px; }
+            .analysis-card .card-title { font-size: 1.55rem; }
+            .modal-body { padding: var(--space-lg); }
+            .modal-body img.img-fluid { height: 160px; }
+            footer { padding: var(--space-lg) 0; }
+        }
+
+        @media (max-width: 768px) {
+            html { font-size: 14.5px; }
+            .hero-header {
+                padding: var(--space-lg) 0 var(--space-md) 0;
+                background-attachment: scroll; /* Better performance on mobile */
+            }
+            .hero-header h1 { font-size: 2.2rem; gap: var(--space-xs); }
+            .hero-header .main-title { font-size: 1.8rem; }
+            .hero-header .subtitle { font-size: 1rem; }
+            .hero-header .sub-headline { font-size: 1.2rem; }
+            .hero-header .authors { padding: var(--space-sm) var(--space-md); font-size: 0.85rem; max-width: 90%; }
+            .hero-header .authors strong { font-size: 1em; }
+            .hero-header .authors .student-info { font-size: 0.85em; }
+            .hero-header .authors img { max-width: 200px; margin-top: var(--space-sm); }
+            .content-section { padding: var(--space-md) 0; }
+            #sumario { padding-top: var(--space-md); }
+            .content-section h2 { font-size: 2.1rem; margin-bottom: var(--space-lg); }
+            .content-section h2::after { width: 110px; height: 4px; }
+            .content-section p { line-height: 1.8; }
+            .lead { font-size: 1.15rem; margin-bottom: var(--space-lg); }
+            .objective-list li:hover { transform: none; box-shadow: var(--shadow); } /* Disable hover transform on smaller screens */
+            .analysis-card { margin-bottom: var(--space-lg); }
+            .analysis-card:hover { transform: none; box-shadow: var(--shadow); } /* Disable hover transform */
+            .analysis-card .card-img-top { height: 200px; }
+            .modal-dialog { margin: var(--space-sm); }
+            .modal-body { padding: var(--space-md); }
+            .modal-body img.img-fluid { height: 140px; }
+            footer { padding: var(--space-lg) 0; }
+            footer .social-icons a { font-size: 1.6rem; }
+            #btnScrollToTop { bottom: var(--space-md); right: var(--space-md); width: 52px; height: 52px; font-size: 1.3rem; }
+            .sumario-list { max-width: 90%; }
+            .modal-body .modal-image-gallery a { flex-basis: calc(50% - var(--space-sm) / 2); max-width: calc(50% - var(--space-sm) / 2); } /* 2 columns */
+        }
+
+         @media (max-width: 576px) {
+             html { font-size: 14px; }
+             .hero-header { padding-bottom: var(--space-sm); }
+             .hero-header h1 { font-size: 2rem; }
+             .hero-header .main-title { font-size: 1.6rem; }
+             .hero-header .subtitle { font-size: 0.9rem; }
+             .hero-header .sub-headline { font-size: 1.1rem; }
+             .hero-header .authors img { max-width: 150px; }
+             .content-section h2 { font-size: 1.9rem; }
+             /* Switch justified text to left align on small screens for readability */
+             .content-section p,
+             .modal-body ul li,
+             .objective-list li span,
+             .bibliography-list li,
+             .analysis-card .card-text,
+             .info-card p {
+                 text-align: left;
+                 hyphens: none; /* Disable hyphenation when left-aligned */
+             }
+             .analysis-card .card-title { font-size: 1.45rem; }
+             .analysis-card .card-text { font-size: 0.98rem; }
+             .analysis-card .card-img-top { height: 180px; }
+             #btnScrollToTop {
+                 width: 50px;
+                 height: 50px;
+                 font-size: 1.25rem;
+             }
+             .modal-dialog { max-width: calc(100% - var(--space-md)); margin: var(--space-sm) auto; }
+             .modal-body { padding: var(--space-md) var(--space-sm); }
+             .modal-body h4 { font-size: 1.3rem; }
+             .modal-body img.img-fluid { height: 120px; }
+             .bibliography-list li { font-size: 0.9rem; gap: var(--space-sm); padding: var(--space-sm); }
+             .bibliography-list li i { font-size: 1.2rem; }
+             .sumario-list li { font-size: 1rem;}
+             .sumario-list li span { font-size: 0.8em; }
+             .modal-body .modal-image-gallery { gap: var(--space-xs); }
+             /* Ensure images in modal gallery take up reasonable space */
+             .modal-body .modal-image-gallery a {
+                 flex-basis: calc(50% - var(--space-xs) / 2); /* Adjust basis for 2 columns with gap */
+                 max-width: calc(50% - var(--space-xs) / 2);
+             }
+         }
+    </style>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="hero-header text-white text-center animate__animated animate__fadeIn">
+        <div class="container">
+             <h1 data-aos="fade-down" data-aos-delay="100">
+                 <i class="fas fa-flask-vial"></i>
+                 <span class="main-title">Controle de Qualidade de Formas Farmacêuticas Sólidas e Semissólidas</span>
+                 <span class="subtitle">Experiência Aplicada em Gestão e Controle de Qualidade em Laboratórios</span>
+             </h1>
+             <p class="sub-headline" data-aos="fade-up" data-aos-delay="200">
+                Guia visual e interativo para <span class="typed-text"></span>
+            </p>
+            <address class="authors" data-aos="fade-up" data-aos-delay="300">
+                <strong>Orientadora:</strong> Dra. Bruna Caroline Marques Gonçalves
+                <span>
+                   <strong>Autoras:</strong> Ana Flávia Barbosa Teixeira, Carolina Silva de Azevedo, Giovana Clara dos Santos Ribeiro, Jessica Santos de Lima
+                </span>
+                 <span class="student-info">Alunas do sétimo período de Farmácia, da Faculdade Serra Dourada. Lorena, SP</span>
+                 <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                 <!-- Ensure 'lab-students-serra-dourada.jpg' path is correct -->
+                 <img src="lab-students-serra-dourada.jpg" alt="Autoras do TCC: Ana Flávia, Carolina, Giovana, Jessica" class="img-fluid" width="250" height="167">
+            </address>
+        </div>
+    </header>
+
+    <main>
+        <section id="sumario" class="content-section">
+            <div class="container">
+                <h2 data-aos="fade-up"><i class="fas fa-list-ul"></i> Sumário</h2>
+                <ul class="sumario-list" data-aos="fade-up" data-aos-delay="100">
+                     <li><a class="main-nav-link" href="#introducao"><i class="fas fa-book-open"></i> Introdução</a> <span>4,5</span></li>
+                     <li><a class="main-nav-link" href="#justificativa"><i class="fas fa-lightbulb"></i> Justificativa</a> <span>6</span></li>
+                     <li><a class="main-nav-link" href="#objetivos"><i class="fas fa-crosshairs"></i> Objetivos</a> <span>7</span></li>
+                     <li><a class="main-nav-link" href="#analises-solidos"><i class="fas fa-pills"></i> Análises Sólidos</a> <span>8-11</span></li>
+                     <li><a class="main-nav-link" href="#analises-semissolidos"><i class="fas fa-mortar-pestle"></i> Análises Semissólidos</a> <span>12</span></li>
+                     <li><a class="main-nav-link" href="#bibliografia"><i class="fas fa-bookmark"></i> Bibliografia</a> <span>13</span></li>
+                 </ul>
+            </div>
+        </section>
+
+        <section id="introducao" class="content-section">
+            <div class="container">
+                <h2 data-aos="fade-up"><i class="fas fa-vials"></i> Introdução</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Para aquisição de medicamentos com excelência, todo procedimento envolvido na fabricação deve ser supervisionado, incluindo: a regulação do ambiente, regulação do procedimento e, principalmente, inspeção final do produto finalizado. É dever das autoridades de vigilância sanitária a verificação do atendimento das farmácias aos requisitos estabelecidos pela <strong>RDC 67/2007</strong>, com o objetivo de reduzir e até mesmo erradicar riscos à saúde da população. Controle de qualidade pode ser definido como o conjunto de operações (programação, coordenação e execução) com o objetivo de verificar a conformidade das preparações com as especificações estabelecidas (Mendes, 2000).</p>
+                <p data-aos="fade-up" data-aos-delay="200">A farmácia de manipulação desempenha um papel fundamental na personalização de tratamentos, oferecendo medicamentos sob medida para as necessidades específicas de cada paciente. No entanto, para garantir a <strong>segurança, eficácia e qualidade</strong> desses produtos, é essencial adotar um rigoroso controle de qualidade em todas as etapas do processo de manipulação. Em farmácias de manipulação é um dos pilares essenciais para garantir que os medicamentos preparados atendam aos padrões de segurança, eficácia e confiabilidade. Ele envolve uma série de processos e normas que visam garantir que cada fórmula manipulada seja segura para o consumo e tratamento do paciente.</p>
+                <p data-aos="fade-up" data-aos-delay="300">Ao contrário dos medicamentos industrializados, que são produzidos em larga escala e submetidos a rigorosos testes antes da comercialização, os medicamentos manipulados são preparados individualmente. Isso exige um controle rigoroso para garantir que cada dose esteja dentro dos padrões esperados. Qualquer falha nesse processo pode comprometer a eficácia do medicamento e até colocar a saúde do paciente em risco. Este guia tem como objetivo apresentar os principais conceitos, normas e práticas que regem o controle de qualidade em farmácias de manipulação e preparar estudantes para o estágio em controle de qualidade.</p>
+                <p data-aos="fade-up" data-aos-delay="400">Abordaremos desde a escolha de matérias-primas até a validação de processos, destacando a importância da conformidade com as regulamentações vigentes, como as exigências da Agência Nacional de Vigilância Sanitária (ANVISA). Ao longo deste material, você encontrará informações detalhadas sobre boas práticas de manipulação, controle microbiológico, testes de qualidade e estratégias para garantir um alto padrão nos produtos manipulados. Com esse conhecimento, profissionais da área poderão aprimorar seus processos e oferecer medicamentos seguros e eficazes aos pacientes.</p>
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="500">
+                     <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                     <!-- Ensure 'lab-pipetting-multi-channel.jpg' path is correct -->
+                     <img src="lab-pipetting-multi-channel.jpg" class="img-fluid" alt="Manipulação precisa com pipetadora multicanal sobre placa de 96 poços em laboratório" loading="lazy" width="800" height="533">
+                </div>
+            </div>
+        </section>
+
+        <section id="justificativa" class="content-section">
+            <div class="container">
+                <h2 data-aos="fade-up"><i class="fas fa-lightbulb"></i> Justificativa</h2>
+                <p data-aos="fade-up" data-aos-delay="100">O controle de qualidade em farmácia é fundamental para garantir a <strong>segurança e eficácia</strong> dos medicamentos. No entanto, muitos estudantes de farmácia e profissionais da área enfrentam desafios para entender e aplicar os conceitos de controle de qualidade em sua prática. A complexidade das normativas, a necessidade de equipamentos específicos e a correta interpretação dos resultados podem ser barreiras.</p>
+                 <p data-aos="fade-up" data-aos-delay="200">Este guia foi elaborado para suprir essa necessidade, oferecendo um material didático <strong>claro, visualmente atraente e focado na aplicação prática</strong>. Com uma leitura simples e illustrativa, buscamos conduzir o estudante ou profissional da melhor maneira, seja para o ambiente de estágio, aulas práticas na faculdade ou para a rotina profissional, facilitando a compreensão e aplicação das Boas Práticas de Controle de Qualidade.</p>
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
+                     <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                     <!-- Ensure 'lab-student-beaker-book.jpg' path is correct -->
+                     <img src="lab-student-beaker-book.jpg" class="img-fluid" alt="Estudante de farmácia em laboratório, usando EPI, analisando um béquer e consultando um livro de química analítica quantitativa" loading="lazy" width="800" height="533">
+                </div>
+                <div class="info-card" data-aos="fade-right" data-aos-delay="300">
+                    <h4><i class="fas fa-graduation-cap"></i> Facilitando o Aprendizado</h4>
+                    <p>Acreditamos que um material didático acessível e visualmente engajador é crucial para transpor a barreira entre a teoria e a prática no controle de qualidade farmacêutico. Este guia visa fortalecer as competências de estudantes e profissionais, promovendo as boas práticas e contribuindo para a segurança e o bem-estar dos pacientes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="objetivos" class="content-section">
+            <div class="container">
+                <h2 data-aos="fade-up"><i class="fas fa-bullseye"></i> Objetivos</h2>
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">Este guia foi cuidadosamente desenvolvido com os seguintes propósitos educacionais e práticos:</p>
+                <ul class="objective-list" data-aos="fade-up" data-aos-delay="200">
+                    <li><i class="fas fa-check-double"></i> <span>Garantir a <strong>qualidade dos medicamentos</strong> manipulados através da apresentação detalhada dos testes essenciais.</span></li>
+                    <li><i class="fas fa-user-graduate"></i> <span><strong>Preparar estudantes</strong> para o estágio em controle de qualidade, fornecendo uma base sólida e prática.</span></li>
+                    <li><i class="fas fa-flask-vial"></i> <span>Ensinar a <strong>realizar e interpretar análises físico-químicas</strong> de medicamentos e cosméticos.</span></li>
+                    <li><i class="fas fa-exclamation-triangle"></i> <span>Reforçar a compreensão da <strong>importância fundamental do controle de qualidade</strong> em farmácia magistral.</span></li>
+                    <li><i class="fas fa-microscope"></i> <span>Apresentar e explicar didaticamente as <strong>técnicas de análise</strong> mais comuns aplicadas a formas farmacêuticas sólidas e semissólidas.</span></li>
+                </ul>
+                 <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
+                     <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                     <!-- Ensure 'target-arrow.jpg' path is correct -->
+                     <img src="target-arrow.jpg" class="img-fluid" alt="Alvo com flecha no centro, simbolizando precisão e alcance de objetivos" loading="lazy" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <section id="analises-solidos" class="content-section">
+            <div class="container">
+                <h2 data-aos="fade-up"><i class="fas fa-pills"></i> Análises em Formas Sólidas</h2>
+                <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">Testes físico-químicos essenciais para garantir a qualidade, uniformidade e conformidade de cápsulas e comprimidos manipulados.</p>
+                <div class="row mb-5">
+                    <div class="col-12 text-center" data-aos="fade-up">
+                        <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                        <!-- Ensure 'lab-robot-arm-flask.jpg' path is correct -->
+                        <img src="lab-robot-arm-flask.jpg" alt="Braço robótico em laboratório farmacêutico moderno" class="img-fluid rounded shadow-lg mb-4" style="max-height: 400px; border: 6px solid var(--white-color);" loading="lazy" width="800" height="400">
+                    </div>
+                </div>
+                <div class="row gy-5 justify-content-center">
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card analysis-card">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- Ensure 'lab-balance-capsules.jpg' path is correct -->
+                            <img src="lab-balance-capsules.jpg" class="card-img-top" alt="Cápsulas sendo pesadas em balança analítica de precisão em laboratório limpo" loading="lazy" width="400" height="267">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-balance-scale"></i> Peso Médio</h3>
+                                <p class="card-text">Dentre as diferentes formas farmacêuticas manipuladas em farmácias, as cápsulas gelatinosas duras para uso oral são as mais utilizadas. Três parâmetros deverão ser determinados para análise do produto: Peso médio das cápsulas manipuladas (P Médio), Desvio padrão Relativo (DPR) e Variação do conteúdo teórico (%).</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Balança Analítica, Processador Estatístico</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#pesoMedioModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card analysis-card">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <!-- Ensure 'lab-tablet-hardness-tester-closeup.jpg' path is correct -->
+                             <img src="lab-tablet-hardness-tester-closeup.jpg" class="card-img-top" alt="Teste de dureza sendo realizado em um comprimido branco sobre superfície metálica com display digital" loading="lazy" width="400" height="267">
+                             <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-gem"></i> Teste de Dureza</h3>
+                                <p class="card-text">O teste de dureza de comprimidos farmacopeico mede a resistência dos comprimidos à compressão. É realizado com um durômetro de comprimidos, um equipamento de controle de qualidade. O durômetro pressiona o comprimido contra uma base fixa com uma carga conhecida. É medida a força necessária para quebrar o comprimido.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Durômetro</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#testeDurezaModal">
+                                     <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card analysis-card">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <!-- Ensure 'lab-friability-tester-rpm.jpg' path is correct -->
+                            <img src="lab-friability-tester-rpm.jpg" class="card-img-top" alt="Friabilômetro mostrando tambor e painel de controle com RPM e número de rotações" loading="lazy" width="400" height="267">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-recycle"></i> Teste de Friabilidade</h3>
+                                <p class="card-text">O teste de friabilidade de comprimidos é um ensaio que determina a resistência à abrasão, de acordo com as especificações da Farmacopeia Brasileira. O teste é realizado apenas em comprimidos não revestidos. Os comprimidos são considerados aceitáveis se a perda de peso for inferior a 1,5%.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Friabilômetro, Balança Analítica</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#testeFriabilidadeModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card analysis-card">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <!-- Ensure 'lab-disintegration-tester-autobasket.jpg' path is correct -->
+                             <img src="lab-disintegration-tester-autobasket.jpg" class="card-img-top" alt="Aparelho de desintegração automático com múltiplas cestas e display digital exibindo tempo e temperatura" loading="lazy" width="400" height="267">
+                             <div class="card-body">
+                                <h3 class="card-title"><i class="far fa-hourglass-half"></i> Desintegração</h3>
+                                <p class="card-text">O teste de desintegração de comprimidos é um ensaio que analisa o tempo que leva para um comprimido se desintegrar. É realizado para garantir que os comprimidos se desintegrem e liberem os princípios ativos de acordo com o esperado.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Desintegrador</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#desintegracaoModal">
+                                     <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card analysis-card">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- Ensure 'lab-dissolution-tester-automated.jpg' path is correct -->
+                            <img src="lab-dissolution-tester-automated.jpg" class="card-img-top" alt="Aparelho de dissolução farmacêutica moderno e automatizado com sistema de amostragem e computador" loading="lazy" width="400" height="267">
+                             <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-water"></i> Dissolução</h3>
+                                <p class="card-text">O teste de dissolução de comprimidos é um teste físico que avalia a performance de um medicamento que precisa se dissolver para ser absorvido. É um parâmetro de qualidade que é avaliado durante a produção e estabilidade dos medicamentos.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Dissolutor</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#dissolucaoModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card analysis-card">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <!-- Ensure 'lab-melting-point-apparatus-screen.jpg' path is correct -->
+                             <img src="lab-melting-point-apparatus-screen.jpg" class="card-img-top" alt="Aparelho digital moderno medindo ponto de fusão com display mostrando gráfico e dados de temperatura" loading="lazy" width="400" height="267">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-temperature-low"></i> Ponto de Fusão</h3>
+                                <p class="card-text">O teste do ponto de fusão na farmacopeia é um procedimento que determina a temperatura em que uma substância passa do estado sólido para o estado líquido. Esta análise é fundamental para garantir a estabilidade e eficácia do medicamento.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Medidor de Ponto de Fusão</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#pontoFusaoModal">
+                                     <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                         <div class="card analysis-card">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <!-- Ensure 'lab-visual-inspection-magnifier.jpg' path is correct -->
+                             <img src="lab-visual-inspection-magnifier.jpg" class="card-img-top" alt="Inspeção visual de produtos farmacêuticos (comprimidos, frasco, creme) com lupa em ambiente controlado" loading="lazy" width="400" height="267">
+                             <div class="card-body">
+                                 <h3 class="card-title"><i class="fas fa-eye"></i> Testes Organolépticos</h3>
+                                 <p class="card-text">As características organolépticas são as propriedades de um produto que podem ser percebidas pelos sentidos humanos. São importantes para avaliar o estado de conservação de um produto, verificando cor, odor e aparência.</p>
+                                 <p class="equipment-info"><i class="fas fa-tools"></i> Sentidos Humanos (Visão, Olfato)</p>
+                                 <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#testeOrganolepticosModal">
+                                     <i class="fas fa-search-plus"></i> Ver Detalhes
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card analysis-card">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- Ensure 'lab-hplc-system.jpg' path is correct -->
+                            <img src="lab-hplc-system.jpg" class="card-img-top" alt="Cromatógrafo líquido de alta eficiência (HPLC) com múltiplos módulos e computador em laboratório farmacêutico" loading="lazy" width="400" height="267">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-percentage"></i> Teor (Dosagem)</h3>
+                                <p class="card-text">O teste de teor no controle de qualidade de formas farmacêuticas sólidas (como comprimidos e cápsulas) é fundamental para garantir que cada unidade do medicamento contenha a quantidade correta do princípio ativo, conforme especificado na formulação. O aparelho mais utilizado para realizar esse teste é o cromatógrafo (HPLC), sendo o mais preciso.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> HPLC, UV-Vis, Titulador</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#teorModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                         <div class="card analysis-card placeholder-card">
+                             <div class="card-body">
+                                 <i class="fas fa-flask"></i>
+                                 <h3 class="card-title">Mais Análises</h3>
+                                 <p class="card-text">Outros testes como Uniformidade de Conteúdo ou identificação podem ser necessários.</p>
+                             </div>
+                         </div>
+                     </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="analises-semissolidos" class="content-section">
+            <div class="container">
+                 <h2 data-aos="fade-up"><i class="fas fa-tint"></i> Análises em Formas Semissólidas</h2>
+                 <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">Testes cruciais para avaliar a qualidade, estabilidade e desempenho de cremes, pomadas, géis e outras preparações tópicas ou mucosas.</p>
+                 <div class="row mb-5">
+                     <div class="col-12 text-center" data-aos="fade-up">
+                         <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                         <!-- Ensure 'lab-hplc-system.jpg' path is correct (reused image) -->
+                         <img src="lab-hplc-system.jpg" alt="Sistema HPLC moderno em laboratório farmacêutico para análise precisa" class="img-fluid rounded shadow-lg mb-4" style="max-height: 400px; border: 6px solid var(--white-color);" loading="lazy" width="800" height="400">
+                     </div>
+                 </div>
+                 <div class="row gy-5 justify-content-center">
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card analysis-card">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- Ensure 'lab-density-meter-setup.jpg' path is correct -->
+                            <img src="lab-density-meter-setup.jpg" class="card-img-top" alt="Sistema de medição de densidade e índice de refração com automação e carrossel de amostras" loading="lazy" width="400" height="267">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-cube"></i> Densidade</h3>
+                                <p class="card-text">Para determinar a densidade de uma substância, avalia-se a relação entre a sua massa e o volume ocupado por ela. Esse procedimento é realizado utilizando-se um instrumento chamado "picnômetro", que, na avaliação de líquidos, pode ser de vidro e, na de produtos semissólidos, pode ser metálico.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Picnômetro, Balança, Densímetro Digital</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#densidadeModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                         <div class="card analysis-card">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <!-- Ensure 'lab-viscometer-helipath.jpg' path is correct -->
+                             <img src="lab-viscometer-helipath.jpg" class="card-img-top" alt="Viscosímetro rotacional digital com acessório Helipath (spindle T-bar) medindo creme branco espesso em frasco de vidro" loading="lazy" width="400" height="267">
+                             <div class="card-body">
+                                 <h3 class="card-title"><i class="fas fa-wave-square"></i> Viscosidade</h3>
+                                 <p class="card-text">A análise de viscosidade é crucial para avaliar a consistência e a fluidez de formas farmacêuticas semissólidas, pois a viscosidade afeta a aplicação, a absorção, a estabilidade e a eficácia do produto.</p>
+                                 <p class="equipment-info"><i class="fas fa-tools"></i> Viscosímetro, Reômetro</p>
+                                 <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#viscosidadeModal">
+                                     <i class="fas fa-search-plus"></i> Ver Detalhes
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                         <div class="card analysis-card">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- Ensure 'lab-ph-meter-setup.jpg' path is correct -->
+                            <img src="lab-ph-meter-setup.jpg" class="card-img-top" alt="Medidor de pH e condutividade com múltiplos eletrodos imersos em béqueres com soluções azuis e frascos de soluções tampão ao lado" loading="lazy" width="400" height="267">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-flask"></i> pH</h3>
+                                <p class="card-text">A análise do pH é essencial para garantir a estabilidade do produto, a compatibilidade com a pele e a eficácia do principio ativo. O pH de uma formulação semissólida pode influenciar a absorção do ativo e a segurança do produto.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> pHmetro</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#phModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                         <div class="card analysis-card">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- Ensure 'lab-rheometer-cream-concentric.jpg' path is correct -->
+                            <img src="lab-rheometer-cream-concentric.jpg" class="card-img-top" alt="Teste de espalhabilidade/reologia de creme branco usando reômetro com geometria de placas concêntricas" loading="lazy" width="400" height="267">
+                             <div class="card-body">
+                                 <h3 class="card-title"><i class="fas fa-arrows-alt-h"></i> Espalhabilidade</h3>
+                                 <p class="card-text">Avalia a capacidade do produto semissólido de se espalhar uniformemente sobre uma superfície. A umectabilidade é a capacidade de absorver água ou outro fluido. Afeta aplicação, absorção e eficácia.</p>
+                                 <p class="equipment-info"><i class="fas fa-tools"></i> Placas de Vidro, Pesos, Reômetro</p>
+                                 <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#espalhabilidadeModal">
+                                     <i class="fas fa-search-plus"></i> Ver Detalhes
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card analysis-card">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- Ensure 'lab-texture-analyzer-toothpaste.jpg' path is correct -->
+                            <img src="lab-texture-analyzer-toothpaste.jpg" class="card-img-top" alt="Analisador de textura (texturômetro) realizando teste de extrusão em tubo de pasta de dente" loading="lazy" width="400" height="267">
+                             <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-compress-arrows-alt"></i> Extrusão/Aplicabilidade</h3>
+                                <p class="card-text">O teste de extrusão avalia a força necessária para expelir a amostra de um recipiente (bisnagas, seringas). É um método para avaliar consistência, força de extração e aplicabilidade.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Texturômetro</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#extrusaoModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                         <div class="card analysis-card">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- Ensure 'lab-incubator-microplate-reader.jpg' path is correct -->
+                            <img src="lab-incubator-microplate-reader.jpg" class="card-img-top" alt="Placa de 96 poços com líquido amarelo dentro de incubadora/leitor de microplacas exibindo gráfico de absorbância vs tempo (teste cinético LAL)" loading="lazy" width="400" height="267">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-bacterium"></i> Endotoxinas (LAL)</h3>
+                                <p class="card-text">Fazer testes de pirogênio (como o LAL para endotoxinas) é uma etapa crítica para garantir a segurança de produtos farmacêuticos e dispositivos médicos parenterais ou aplicados em pele não íntegra, evitando reações febris.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Leitor Microplacas, Incubador, Reagente LAL</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#endotoxinasModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                         <div class="card analysis-card">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <!-- Ensure 'lab-colony-counter-maldi.jpg' path is correct -->
+                             <img src="lab-colony-counter-maldi.jpg" class="card-img-top" alt="Sistema de contagem de colônias e identificação microbiana (MALDI-TOF) em laboratório" loading="lazy" width="400" height="267">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-microscope"></i> Contagem Microbiológica</h3>
+                                <p class="card-text">A Contagem Padrão em Placas (CPP) é utilizada para quantificar microrganismos em produtos não estéreis, determinando a carga microbiana (UFC/g ou mL) e garantindo que esteja dentro dos limites aceitáveis para segurança.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Estufa, Autoclave, Contador Colônias, Meios</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#contagemMicrobiologicaModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card analysis-card">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <!-- Ensure 'lab-cream-application-hand.jpg' path is correct -->
+                             <img src="lab-cream-application-hand.jpg" class="card-img-top" alt="Aplicação e espalhamento de creme cosmético branco na mão para avaliação sensorial" loading="lazy" width="400" height="267">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-paint-brush"></i> Testes Organolépticos</h3>
+                                <p class="card-text">Avaliação detalhada da aparência (cor, homogeneidade, separação de fases), odor (característico, ausência de ranço) e consistência/textura (sensorial). Importante para detecção rápida de instabilidades ou problemas de conservação.</p>
+                                <p class="equipment-info"><i class="fas fa-tools"></i> Sentidos Humanos (Visão, Olfato, Tato)</p>
+                                <button type="button" class="btn btn-details" data-bs-toggle="modal" data-bs-target="#testeOrganolepticosModal">
+                                    <i class="fas fa-search-plus"></i> Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                         <div class="card analysis-card placeholder-card">
+                             <div class="card-body">
+                                 <i class="fas fa-vial"></i>
+                                 <h3 class="card-title">Testes Específicos</h3>
+                                 <p class="card-text">Testes como tamanho de glóbulos (emulsões) ou partículas (suspensões) podem ser relevantes.</p>
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
+            </div>
+        </section>
+
+        <section id="bibliografia" class="content-section">
+            <div class="container">
+                <h2 data-aos="fade-up"><i class="fas fa-book"></i> Referências Bibliográficas</h2>
+                <ul class="bibliography-list" data-aos="fade-up" data-aos-delay="100">
+                    <li><i class="fas fa-bookmark"></i> <span>Controle de qualidade de insumos e produtos farmacêuticos [recurso eletrônico] / Keline Lang... [et al.] ; revisão técnica: Wanderley José Mantovani Bittencourt. – Porto Alegre : SAGAH, 2021. ISBN 978-65-5690-235-7</span></li>
+                    <li><i class="fas fa-bookmark"></i> <span>RIBEIRO, A. L. A. Resolução RDC 33/ANVISA/MS: uma análise crítica do roteiro de inspeção para farmácias com manipulação. Niterói: UFF, 2003.</span></li>
+                    <li><i class="fas fa-bookmark"></i> <span>BONFILIO, R.; EMERICK, G. L.; NETTO JR. A. & SALGADO, H. R. N. Farmácia magistral: sua importância e seu perfil de qualidade. Revista Baiana de Saúde Pública, v. 34, n. 4, p. 853-865, 2010. Disponível em: &lt;http://rbsp.sesab.ba.gov.br/index.php/rbsp/article/view/285&gt;.</span></li>
+                    <li><i class="fas fa-bookmark"></i> <span>BRASIL. Agência Nacional de Vigilância Sanitária. Resolução RDC nº 67, de 8 de outubro de 2007. Dispõe sobre Boas Práticas de Manipulação de Preparações Magistrais e Oficinais para Uso Humano em farmácias. Diário Oficial da União, Brasília, DF, 9 out. 2007. Disponível em: &lt;https://bvsms.saude.gov.br/bvs/saudelegis/anvisa/2007/rdc0067_08_10_2007.html&gt; (e atualizações posteriores)</span></li>
+                    <li><i class="fas fa-bookmark"></i> <span>Farmacopeia Brasileira. 6ª Edição. Brasília: ANVISA, 2019. Volumes 1 e 2 (e suplementos).</span></li>
+                    <li><i class="fas fa-bookmark"></i> <span>MÉTODOS ANALÍTICOS USADOS NO CONTROLE DE QUALIDADE FÍSICO-QUÍMICO NA INDÚSTRIA FARMACÊUTICA. Faculdade de Mauá - FAMAM. Disponível em: &lt;https://famam.com.br/wp-content/uploads/2020/05/METODOS-ANALITICOS-USADOS-NO-CONTROLE-DE-QUALIDADE-FISICO-QUIMICO-NA-INDUSTRIA-FARMACEUTICA.pdf&gt;</span></li>
+                 </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p><strong>Trabalho de Conclusão de Curso - Farmácia (2024)</strong></p>
+            <p>Guia Interativo de Controle de Qualidade © <span id="currentYear"></span>. Desenvolvido com fins educacionais.</p>
+            <div class="social-icons mt-4">
+                 <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Link Institucional" data-bs-toggle="tooltip" title="Link Institucional"><i class="fas fa-university"></i></a>
+                 <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-bs-toggle="tooltip" title="LinkedIn do Grupo/Orientadora"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="mailto:contato@exemplo.com" aria-label="Email para Contato" data-bs-toggle="tooltip" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+             </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal fade" id="pesoMedioModal" tabindex="-1" aria-labelledby="pesoMedioModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pesoMedioModalLabel"><i class="fas fa-balance-scale"></i> Peso Médio de Cápsulas - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Procedimento Geral</h4>
+                    <p>Pesar individualmente um número estatisticamente representativo de cápsulas (geralmente 20 unidades de um lote). Calcular o peso médio (PM) de todas as unidades pesadas. Calcular o Desvio Padrão Relativo (DPR) ou Coeficiente de Variação (CV%) para avaliar a uniformidade da amostra. Verificar se os pesos individuais estão dentro dos limites percentuais especificados em relação ao peso médio calculado.</p>
+                    <div class="modal-image-gallery">
+                        <a href="lab-balance-capsules.jpg" class="glightbox" data-gallery="gallery-peso-medio" data-title="Pesagem de cápsulas em balança analítica">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <!-- Ensure 'lab-balance-capsules.jpg' path is correct -->
+                           <img src="lab-balance-capsules.jpg" class="img-fluid" alt="Balança analítica de precisão pesando cápsulas brancas em laboratório" loading="lazy" width="250" height="167">
+                        </a>
+                        <a href="lab-differential-weighing.jpg" class="glightbox" data-gallery="gallery-peso-medio" data-title="Pesagem diferencial de pó em balança de precisão">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <!-- Ensure 'lab-differential-weighing.jpg' path is correct -->
+                           <img src="lab-differential-weighing.jpg" class="img-fluid" alt="Balança de precisão com display digital mostrando pesagem diferencial de pó azul em béquer" loading="lazy" width="250" height="167">
+                        </a>
+                    </div>
+                    <h4>Equipamentos e Materiais</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Balança Analítica (calibrada, com precisão adequada de 0,1 mg ou melhor)</li>
+                        <li><i class="fas fa-check-circle"></i> Recipiente de pesagem (vidro de relógio, papel de pesagem antiestático)</li>
+                        <li><i class="fas fa-check-circle"></i> Pinça (para manuseio das cápsulas)</li>
+                        <li><i class="fas fa-check-circle"></i> Processador estatístico (Planilha eletrônica ou software)</li>
+                    </ul>
+                    <h4>Critérios de Aceitação (Exemplo - Farmacopeia Brasileira)</h4>
+                    <p>De acordo com a Farmacopeia Brasileira, o peso médio de cápsulas manipuladas pode ter uma variação tolerada de <strong>±10%</strong> para cápsulas com peso médio menor que 300 mg. Para cápsulas com peso médio igual ou maior que 300 mg, a variação tolerada é de <strong>±7,5%</strong>. A amostra é considerada aprovada se não mais que 2 unidades estiverem fora desses limites em relação ao peso médio, E nenhuma unidade estiver fora do dobro desses limites (ex: ±20% ou ±15%). O peso médio obtido também deve ser consistente com o esperado para a formulação.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Modals (add loading="lazy", width, height to their images similarly) -->
+    <!-- Example for TesteDurezaModal -->
+    <div class="modal fade" id="testeDurezaModal" tabindex="-1" aria-labelledby="testeDurezaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="testeDurezaModalLabel"><i class="fas fa-gem"></i> Teste de Dureza de Comprimidos - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                     <h4>Procedimento Geral</h4>
+                     <p>Posicionar o comprimido individualmente no aparelho (durômetro), geralmente de forma diametral entre as mandíbulas de teste. Aplicar uma força de compressão crescente e constante até que ocorra a fratura (ruptura) do comprimido. Registrar a força máxima aplicada no momento da fratura. Repetir o procedimento para um número estatisticamente significativo de comprimidos (geralmente 10 ou mais unidades). Calcular a média e o desvio padrão dos valores de dureza obtidos.</p>
+                      <div class="modal-image-gallery">
+                          <a href="lab-tablet-hardness-tester-closeup.jpg" class="glightbox" data-gallery="gallery-dureza" data-title="Teste de dureza de comprimido em durômetro">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <!-- Ensure 'lab-tablet-hardness-tester-closeup.jpg' path is correct -->
+                             <img src="lab-tablet-hardness-tester-closeup.jpg" class="img-fluid" alt="Durômetro automático testando comprimido branco com display mostrando dados" loading="lazy" width="250" height="167">
+                          </a>
+                      </div>
+                     <h4>Equipamentos e Materiais</h4>
+                     <ul>
+                         <li><i class="fas fa-check-circle"></i> Durômetro (calibrado, pode ser manual ou automático)</li>
+                         <li><i class="fas fa-check-circle"></i> Pincel macio (para limpeza das mandíbulas entre testes)</li>
+                         <li><i class="fas fa-check-circle"></i> Paquímetro (para medir dimensões do comprimido, se necessário)</li>
+                     </ul>
+                     <h4>Critérios de Aceitação</h4>
+                     <p>A dureza é expressa em unidades de força, como Newtons (N) ou Kiloponds (kp). Os limites de dureza aceitáveis variam consideravelmente dependendo da formulação, tamanho, formato e tipo de comprimido. Geralmente, valores entre 4 a 10 Kp (aproximadamente 40 a 100 N) são comuns para comprimidos convencionais, mas a faixa específica deve ser definida durante o desenvolvimento e mantida consistentemente entre lotes.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Repeat adding loading="lazy", width, height for all other modal images... -->
+    <!-- Modal: Teste de Friabilidade -->
+    <div class="modal fade" id="testeFriabilidadeModal" tabindex="-1" aria-labelledby="testeFriabilidadeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="testeFriabilidadeModalLabel"><i class="fas fa-recycle"></i> Teste de Friabilidade - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Procedimento Geral</h4>
+                    <p>Pesar com precisão um número definido de comprimidos (geralmente uma quantidade que some aproximadamente 6,5 g, ou 10 comprimidos se o peso unitário for > 650 mg). Registrar o peso inicial (Pi). Colocar os comprimidos no tambor do friabilômetro. Fechar e rotacionar por 100 voltas a 25 rpm (4 minutos). Remover os comprimidos, retirar o pó solto (com pincel macio ou sopro de ar) e pesar novamente (Pf). Calcular a porcentagem de perda de peso: Friabilidade (%) = [(Pi - Pf) / Pi] * 100.</p>
+                     <div class="modal-image-gallery">
+                        <a href="lab-friability-tester-pills.jpg" class="glightbox" data-gallery="gallery-friabilidade" data-title="Friabilômetro em operação com comprimidos">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-friability-tester-pills.jpg" class="img-fluid" alt="Friabilômetro com tambor rotatório contendo comprimidos amarelos e pó resultante" loading="lazy" width="250" height="167">
+                        </a>
+                        <a href="lab-friability-tester-rpm.jpg" class="glightbox" data-gallery="gallery-friabilidade" data-title="Painel de controle do friabilômetro">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-friability-tester-rpm.jpg" class="img-fluid" alt="Friabilômetro com tambor duplo e painel digital mostrando RPM, rotações e status" loading="lazy" width="250" height="167">
+                        </a>
+                     </div>
+                    <h4>Equipamentos e Materiais</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Friabilômetro (com tambor padrão tipo Roche)</li>
+                        <li><i class="fas fa-check-circle"></i> Balança Analítica (calibrada)</li>
+                        <li><i class="fas fa-check-circle"></i> Pincel macio ou dispositivo de sopro de ar</li>
+                        <li><i class="fas fa-check-circle"></i> Cronômetro ou contador de rotações integrado</li>
+                    </ul>
+                     <h4>Critérios de Aceitação (Farmacopeia Brasileira)</h4>
+                     <p>Este teste determina a resistência à abrasão e é geralmente realizado em comprimidos não revestidos. Os comprimidos são considerados aceitáveis se a perda de peso for <strong>inferior a 1,5%</strong>. Se a perda exceder este limite, ou se houver quebras evidentes ou lascamento significativo, o lote pode ser reprovado.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Desintegração -->
+    <div class="modal fade" id="desintegracaoModal" tabindex="-1" aria-labelledby="desintegracaoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="desintegracaoModalLabel"><i class="far fa-hourglass-half"></i> Teste de Desintegração - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Procedimento Geral</h4>
+                    <p>Colocar uma unidade (comprimido ou cápsula) em cada um dos seis tubos da cesta do aparelho. Adicionar um disco, se especificado na monografia (geralmente para cápsulas ou comprimidos que flutuam). Imergir a cesta no líquido especificado (geralmente água purificada, mas pode ser HCl 0,1 M ou tampão) a 37°C ± 2°C. Operar o aparelho, movimentando a cesta verticalmente (ciclos/min definidos), pelo tempo especificado na monografia. Observar continuamente: a desintegração é considerada completa quando não restam resíduos palpáveis do núcleo do comprimido ou conteúdo da cápsula sobre a tela de malha metálica no fundo de cada tubo (fragmentos de revestimento ou invólucro insolúvel podem permanecer).</p>
+                    <div class="modal-image-gallery">
+                        <a href="lab-disintegration-tester-autobasket.jpg" class="glightbox" data-gallery="gallery-desintegracao" data-title="Aparelho de desintegração automático">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-disintegration-tester-autobasket.jpg" class="img-fluid" alt="Aparelho de desintegração automático 'AutoBasket' com cestas e display digital" loading="lazy" width="250" height="167">
+                        </a>
+                    </div>
+                    <h4>Equipamentos e Materiais</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Desintegrador (com cestas, tubos, telas de malha padrão, sistema de movimento vertical)</li>
+                        <li><i class="fas fa-check-circle"></i> Discos (se aplicável)</li>
+                        <li><i class="fas fa-check-circle"></i> Banho termostático ou sistema de aquecimento integrado</li>
+                        <li><i class="fas fa-check-circle"></i> Cronômetro</li>
+                        <li><i class="fas fa-check-circle"></i> Termômetro calibrado</li>
+                        <li><i class="fas fa-check-circle"></i> Meio de desintegração especificado (água, HCl, tampão)</li>
+                        <li><i class="fas fa-check-circle"></i> Béqueres (geralmente 1000 mL)</li>
+                    </ul>
+                    <h4>Critérios de Aceitação</h4>
+                    <p>O tempo máximo permitido para a desintegração varia conforme o tipo de forma farmacêutica e é especificado nas monografias farmacopeicas. Exemplos comuns: Comprimidos não revestidos (até 15 ou 30 min em água); Comprimidos revestidos (depende do revestimento, pode exigir meio ácido inicial); Cápsulas (geralmente até 30 min). Todas as 6 unidades testadas devem desintegrar completamente dentro do tempo limite. Se 1 ou 2 unidades falharem, o teste deve ser repetido com mais 12 unidades. No total, pelo menos 16 das 18 unidades testadas devem cumprir o requisito.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Dissolução -->
+    <div class="modal fade" id="dissolucaoModal" tabindex="-1" aria-labelledby="dissolucaoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dissolucaoModalLabel"><i class="fas fa-water"></i> Teste de Dissolução - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Procedimento Geral</h4>
+                    <p>Montar o aparelho de dissolução especificado (Aparato 1 - Cesta ou Aparato 2 - Pá). Preencher as cubas de dissolução com o volume exato do meio de dissolução especificado na monografia (previamente desgaseificado e aquecido a 37°C ± 0.5°C). Introduzir cuidadosamente uma unidade da forma farmacêutica em cada cuba (na cesta ou no fundo da cuba para a pá). Iniciar a agitação na velocidade definida (e.g., 50 ou 100 rpm). Coletar amostras (alíquotas) do meio em intervalos de tempo pré-determinados usando cânulas e seringas (filtrar se necessário). Analisar a concentração do fármaco dissolvido nas amostras (geralmente por Espectrofotometria UV-Vis ou HPLC), comparando com um padrão de referência. Calcular a porcentagem do fármaco dissolvida em relação à dose rotulada em cada ponto de tempo.</p>
+                    <div class="modal-image-gallery">
+                        <a href="lab-dissolution-tester-beaker.jpg" class="glightbox" data-gallery="gallery-dissolucao" data-title="Aparelho de dissolução (Cesta) em operação">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-dissolution-tester-beaker.jpg" class="img-fluid" alt="Aparelho de dissolução (cesta) em béquer com termômetro, mostrando comprimido vermelho dissolvendo" loading="lazy" width="250" height="167">
+                        </a>
+                        <a href="lab-dissolution-tester-automated.jpg" class="glightbox" data-gallery="gallery-dissolucao" data-title="Sistema de dissolução automatizado">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-dissolution-tester-automated.jpg" class="img-fluid" alt="Sistema de dissolução automatizado com múltiplas cubas, sistema de amostragem e computador" loading="lazy" width="250" height="167">
+                        </a>
+                    </div>
+                    <h4>Equipamentos e Materiais</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Dissolutor (cubas, sistema de agitação - pás/cestas, banho termostático)</li>
+                        <li><i class="fas fa-check-circle"></i> Meio de dissolução especificado (água, tampões, meio com surfactante)</li>
+                        <li><i class="fas fa-check-circle"></i> Sistema de desgaseificação do meio (ultrassom, aquecimento e filtração a vácuo)</li>
+                        <li><i class="fas fa-check-circle"></i> Cânulas de amostragem, Seringas e Filtros de seringa (compatíveis com o meio e fármaco)</li>
+                        <li><i class="fas fa-check-circle"></i> Espectrofotômetro UV-Vis ou Sistema HPLC com detector apropriado</li>
+                        <li><i class="fas fa-check-circle"></i> Padrões de referência do fármaco (SQR)</li>
+                        <li><i class="fas fa-check-circle"></i> Vidraria volumétrica calibrada (balões, pipetas)</li>
+                        <li><i class="fas fa-check-circle"></i> Termômetro calibrado, Cronômetro</li>
+                    </ul>
+                    <h4>Critérios de Aceitação</h4>
+                    <p>O teste de dissolução avalia a taxa e extensão da liberação do fármaco da forma farmacêutica. É um parâmetro crítico de qualidade para prever a performance in vivo. Os critérios de aceitação são definidos nas monografias e geralmente envolvem a quantidade mínima do fármaco que deve ser dissolvida ("Q") em um tempo específico. Por exemplo, para comprimidos de liberação imediata, um critério comum é "Não menos que 75% (Q) do fármaco rotulado dissolvido em 45 minutos". Existem estágios de teste (S1, S2, S3) com número crescente de unidades testadas, permitindo a aceitação do lote com base em resultados médios e individuais.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Ponto de Fusão -->
+    <div class="modal fade" id="pontoFusaoModal" tabindex="-1" aria-labelledby="pontoFusaoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pontoFusaoModalLabel"><i class="fas fa-temperature-low"></i> Teste de Ponto de Fusão - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Procedimento Geral (Método Capilar - Classe I Farmacopeia)</h4>
+                    <p>Assegurar que a amostra sólida (geralmente o fármaco ou excipiente) esteja seca e finamente pulverizada (usar almofariz e pistilo se necessário). Introduzir uma pequena quantidade do pó em um tubo capilar de vidro de parede fina, fechado em uma extremidade, de forma a obter uma coluna compactada de 2-4 mm de altura. Colocar o capilar no aparelho de ponto de fusão, próximo ao termômetro ou sensor. Aquecer o banho (óleo ou bloco metálico) rapidamente até cerca de 10-20°C abaixo do ponto de fusão esperado, e então ajustar a taxa de aquecimento para 1-2 °C por minuto. Observar atentamente a amostra através da lupa. Registrar a temperatura de início da fusão (primeira aparição de líquido claro) e a temperatura de fim da fusão (desaparecimento completo da última partícula sólida). A "faixa de fusão" é o intervalo entre estas duas temperaturas.</p>
+                    <div class="modal-image-gallery">
+                        <a href="lab-melting-point-apparatus-screen.jpg" class="glightbox" data-gallery="gallery-ponto-fusao" data-title="Aparelho digital de ponto de fusão">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-melting-point-apparatus-screen.jpg" class="img-fluid" alt="Aparelho digital de ponto de fusão com display mostrando vídeo da amostra, gráfico e dados" loading="lazy" width="250" height="167">
+                        </a>
+                         <a href="lab-melting-point-tubes.jpg" class="glightbox" data-gallery="gallery-ponto-fusao" data-title="Tubos capilares no aparelho de ponto de fusão">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-melting-point-tubes.jpg" class="img-fluid" alt="Visão interna de aparelho de ponto de fusão com tubos capilares contendo amostra sólida e termômetro" loading="lazy" width="250" height="167">
+                        </a>
+                    </div>
+                    <h4>Equipamentos e Materiais</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Medidor de Ponto de Fusão (manual com banho de óleo/bloco aquecido e lupa, ou automático digital)</li>
+                        <li><i class="fas fa-check-circle"></i> Tubos capilares de vidro para ponto de fusão</li>
+                        <li><i class="fas fa-check-circle"></i> Espátula</li>
+                        <li><i class="fas fa-check-circle"></i> Termômetro calibrado de alta precisão (geralmente imersão parcial ou total, dependendo do aparelho) ou Sensor de temperatura calibrado</li>
+                        <li><i class="fas fa-check-circle"></i> Substâncias de referência com ponto de fusão conhecido (para calibração/verificação do aparelho)</li>
+                        <li><i class="fas fa-check-circle"></i> Dessecador (para garantir amostra seca)</li>
+                        <li><i class="fas fa-check-circle"></i> Almofariz e Pistilo (para pulverizar amostra, se necessário)</li>
+                    </ul>
+                     <h4>Critérios de Aceitação</h4>
+                     <p>O ponto de fusão (ou faixa de fusão) é uma propriedade física característica de substâncias cristalinas puras. É usado principalmente para identificar substâncias e como indicador de pureza (impurezas geralmente alargam e diminuem a faixa de fusão). A faixa de fusão obtida para a amostra deve estar dentro dos limites especificados na monografia farmacopeica para o material em teste. Uma faixa de fusão estreita (tipicamente 1-2 °C) geralmente indica alta pureza.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Testes Organolépticos -->
+    <div class="modal fade" id="testeOrganolepticosModal" tabindex="-1" aria-labelledby="testeOrganolepticosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="testeOrganolepticosModalLabel"><i class="fas fa-eye"></i> Testes Organolépticos (Sólidos e Semissólidos) - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                     <h4>Procedimento Geral</h4>
+                     <p>Realizar a avaliação em condições adequadas de iluminação (luz branca, preferencialmente natural ou simulada) e em ambiente limpo e livre de odores estranhos. Observar um número representativo de unidades (para sólidos) ou uma porção representativa do produto (para semissólidos), comparando visualmente, olfativamente e, quando aplicável (semissólidos), tátilmente com um padrão de referência (se disponível) ou com a descrição detalhada na especificação do produto.</p>
+                     <h4>Parâmetros Avaliados Comuns</h4>
+                     <ul>
+                        <li><i class="fas fa-palette text-info"></i> <strong>Aparência Visual:</strong>
+                            <ul>
+                                <li><u>Sólidos (Comprimidos/Cápsulas):</u> Cor (uniformidade, intensidade), formato, tamanho, integridade (ausência de quebras, lascas, rachaduras), superfície (lisura, brilho, presença de manchas ou pontos), impressão (nitidez, se aplicável), uniformidade entre unidades.</li>
+                                <li><u>Semissólidos (Cremes/Pomadas/Géis):</u> Cor (uniformidade), homogeneidade (ausência de grumos, separação de fases visível - óleo/água, sinérese - exsudação de líquido), brilho/opacidade, consistência aparente, presença de bolhas de ar excessivas, cristalização visível do ativo ou excipientes.</li>
+                            </ul>
+                        </li>
+                        <li><i class="fas fa-wind text-info"></i> <strong>Odor:</strong> Presença do odor característico esperado da formulação (se houver) ou ausência de odores estranhos que possam indicar contaminação, degradação (e.g., ranço em bases oleosas) ou interação entre componentes.</li>
+                        <li><i class="fas fa-hand-paper text-info"></i> <strong>Textura/Consistência (Principalmente Semissólidos):</strong> Avaliação tátil (realizada com luvas e espátula ou diretamente na pele limpa e seca): firmeza, espalhabilidade (facilidade de espalhar uma camada fina), pegajosidade (sensação aderente após aplicação), oleosidade, sensação na pele (suavidade, aspereza, sensação arenosa - indicativa de partículas não dissolvidas ou grandes).</li>
+                    </ul>
+                    <div class="modal-image-gallery">
+                        <a href="lab-visual-inspection-magnifier.jpg" class="glightbox" data-gallery="gallery-organoleptico" data-title="Inspeção visual com lupa">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-visual-inspection-magnifier.jpg" class="img-fluid" alt="Inspeção visual de produtos farmacêuticos variados (ampola, comprimidos, frasco, creme) com lupa" loading="lazy" width="250" height="167">
+                        </a>
+                        <a href="lab-tablet-comparison-lots.jpg" class="glightbox" data-gallery="gallery-organoleptico" data-title="Comparação visual de lotes de comprimidos">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-tablet-comparison-lots.jpg" class="img-fluid" alt="Comparação visual de comprimidos verdes de dois lotes (Lote A e Lote B)" loading="lazy" width="250" height="167">
+                        </a>
+                        <a href="lab-cream-application-hand.jpg" class="glightbox" data-gallery="gallery-organoleptico" data-title="Avaliação sensorial de creme">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-cream-application-hand.jpg" class="img-fluid" alt="Avaliação sensorial de creme branco sendo espalhado na mão" loading="lazy" width="250" height="167">
+                        </a>
+                    </div>
+                     <h4>Equipamentos e Materiais</h4>
+                     <ul>
+                         <li><i class="fas fa-check-circle"></i> Fonte de luz padronizada (cabine de luz, se disponível)</li>
+                         <li><i class="fas fa-check-circle"></i> Superfície de observação limpa, neutra (branca ou preta)</li>
+                         <li><i class="fas fa-check-circle"></i> Espátulas limpas, bastões de vidro (para manuseio de semissólidos)</li>
+                         <li><i class="fas fa-check-circle"></i> Placas de Petri ou vidros de relógio</li>
+                         <li><i class="fas fa-check-circle"></i> Luvas descartáveis (essencial para avaliação tátil)</li>
+                         <li><i class="fas fa-check-circle"></i> Padrão de referência físico (lote anterior aprovado) ou Especificação detalhada</li>
+                     </ul>
+                     <h4>Critérios de Aceitação</h4>
+                     <p>As características organolépticas são as propriedades percebidas pelos sentidos humanos e servem como uma avaliação rápida e importante do estado de conservação e conformidade do produto. A amostra analisada deve corresponder integralmente à descrição organoléptica definida na especificação do produto aprovada. Qualquer desvio significativo (alteração de cor, odor estranho, separação de fases, presença de partículas não esperadas, etc.) pode indicar problemas de qualidade, estabilidade ou contaminação e geralmente leva à investigação adicional e potencial reprovação do lote.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Teor -->
+    <div class="modal fade" id="teorModal" tabindex="-1" aria-labelledby="teorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teorModalLabel"><i class="fas fa-percentage"></i> Teste de Teor (Dosagem) - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Princípio e Relevância</h4>
+                     <p>O teste de teor (ou dosagem, ensaio quantitativo) determina a quantidade exata do princípio ativo (fármaco) presente em uma forma farmacêutica. É um dos testes mais críticos do controle de qualidade, pois garante que o paciente receba a dose correta do medicamento, assegurando sua eficácia e segurança. Este teste verifica se o processo de fabricação/manipulação foi realizado corretamente e se a quantidade de ativo está conforme o rotulado.</p>
+                    <h4>Procedimento Geral (Exemplo com HPLC para Sólidos)</h4>
+                    <p><strong>Preparo da Amostra Composta:</strong> Pesar individualmente um número representativo de unidades (e.g., 20 comprimidos ou o conteúdo de 20 cápsulas). Calcular o peso médio. Triturar finamente as unidades em um almofariz até obter um pó homogêneo.</p>
+                    <p><strong>Pesagem e Extração:</strong> Pesar com exatidão uma quantidade deste pó homogêneo que seja equivalente ao peso médio de uma unidade (ou uma fração conhecida). Para semissólidos, pesar uma quantidade representativa da amostra bem homogeneizada. Transferir quantitativamente a amostra pesada para um balão volumétrico de capacidade adequada.</p>
+                    <p><strong>Solubilização e Diluição:</strong> Adicionar um volume apropriado do solvente especificado no método validado (capaz de dissolver completamente o fármaco). Usar agitação mecânica, vórtex ou banho de ultrassom para garantir a extração completa do fármaco do pó/matriz. Completar o volume do balão com o solvente até a marca e homogeneizar bem. Realizar diluições sucessivas e precisas com vidraria volumétrica calibrada (pipetas, balões) para obter uma concentração final da solução da amostra que esteja dentro da faixa linear de resposta do método analítico (HPLC, UV-Vis).</p>
+                    <p><strong>Análise Instrumental:</strong> Preparar soluções padrão da Substância Química de Referência (SQR) do fármaco em concentrações conhecidas, usando o mesmo solvente da amostra. Configurar e calibrar o instrumento (HPLC, UV-Vis, etc.) conforme o método validado. Injetar volumes iguais e precisos das soluções padrão e da solução da amostra no equipamento. Registrar as respostas analíticas (área do pico cromatográfico, absorbância).</p>
+                    <p><strong>Cálculo do Teor:</strong> Comparar a resposta analítica da amostra com a resposta dos padrões (usando uma curva de calibração ou comparação com um padrão único de concentração similar). Calcular a concentração do fármaco na solução da amostra final. Com base nesta concentração, nas diluições realizadas e no peso inicial da amostra, calcular a quantidade de fármaco na unidade da forma farmacêutica original. Expressar o resultado como porcentagem do valor rotulado (% Teor = (Quantidade encontrada / Quantidade rotulada) * 100).</p>
+                    <div class="modal-image-gallery">
+                        <a href="lab-hplc-system.jpg" class="glightbox" data-gallery="gallery-teor" data-title="Sistema HPLC completo">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-hplc-system.jpg" class="img-fluid" alt="Sistema de Cromatografia Líquida de Alta Eficiência (HPLC) com módulos e telas exibindo cromatogramas" loading="lazy" width="250" height="167">
+                        </a>
+                         <a href="lab-hplc-injection.jpg" class="glightbox" data-gallery="gallery-teor" data-title="Injeção de amostra no HPLC">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-hplc-injection.jpg" class="img-fluid" alt="Injeção de amostra em porta de injeção de coluna de HPLC com seringa" loading="lazy" width="250" height="167">
+                         </a>
+                         <a href="lab-mortar-pestle-powder.jpg" class="glightbox" data-gallery="gallery-teor" data-title="Preparo de amostra sólida (trituração)">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-mortar-pestle-powder.jpg" class="img-fluid" alt="Preparação de amostra sólida: trituração de pó branco em almofariz de porcelana com pistilo" loading="lazy" width="250" height="167">
+                         </a>
+                    </div>
+                    <h4>Equipamentos e Materiais Comuns</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Cromatógrafo Líquido de Alta Eficiência (HPLC) com detector adequado (UV, DAD) - Método mais comum e específico.</li>
+                        <li><i class="fas fa-check-circle"></i> Espectrofotômetro UV-Vis - Método mais simples, útil se não houver interferentes.</li>
+                        <li><i class="fas fa-check-circle"></i> Titulador Potenciométrico ou Manual - Para fármacos que permitem titulação.</li>
+                        <li><i class="fas fa-check-circle"></i> Balança Analítica/Semianalítica (calibradas)</li>
+                        <li><i class="fas fa-check-circle"></i> Vidraria Volumétrica Classe A calibrada (balões, pipetas)</li>
+                        <li><i class="fas fa-check-circle"></i> Equipamentos para extração (Agitador magnético/mecânico, Vórtex, Banho de Ultrassom)</li>
+                        <li><i class="fas fa-check-circle"></i> Solventes de grau apropriado (HPLC, PA)</li>
+                        <li><i class="fas fa-check-circle"></i> Substância Química de Referência (SQR) certificada do fármaco</li>
+                        <li><i class="fas fa-check-circle"></i> Filtros de seringa (se necessário para clarificar a solução antes da injeção no HPLC)</li>
+                         <li><i class="fas fa-check-circle"></i> Almofariz e Pistilo</li>
+                    </ul>
+                    <h4>Critérios de Aceitação</h4>
+                    <p>O teor médio do princípio ativo encontrado na análise deve estar dentro dos limites especificados pela farmacopeia oficial ou pelo registro do produto na autoridade sanitária. Geralmente, para a maioria dos produtos, os valores aceitáveis ficam na faixa de <strong>90,0% a 110,0%</strong> do teor declarado no rótulo. No entanto, para fármacos com baixo índice terapêutico ou em certas formas farmacêuticas, faixas mais estreitas podem ser exigidas (e.g., 95,0% a 105,0%).</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Densidade -->
+    <div class="modal fade" id="densidadeModal" tabindex="-1" aria-labelledby="densidadeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="densidadeModalLabel"><i class="fas fa-cube"></i> Teste de Densidade (Semissólidos) - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Procedimento Geral (com Picnômetro)</h4>
+                    <p>Limpar, secar completamente e pesar o picnômetro vazio com sua tampa (registrar como m1). Calibrar o volume exato (V) do picnômetro usando água purificada de densidade conhecida na temperatura de ensaio (pesar o picnômetro cheio de água e calcular o volume). Secar novamente o picnômetro. Preencher completamente o picnômetro com a amostra semissólida previamente homogeneizada, tomando cuidado para eliminar bolhas de ar (pode ser necessário aquecer ligeiramente a amostra ou usar vácuo). Colocar a tampa cuidadosamente, permitindo que o excesso de amostra saia pelo capilar da tampa. Limpar o exterior do picnômetro meticulosamente. Pesar o picnômetro preenchido com a amostra (registrar como m2). Calcular a massa da amostra (m = m2 - m1). Calcular a densidade (ρ) da amostra usando a fórmula: ρ = m / V. Todo o procedimento deve ser realizado em temperatura rigorosamente controlada (e.g., 20°C ou 25°C), usando um banho termostático.</p>
+                     <div class="modal-image-gallery">
+                        <a href="lab-density-meter-setup.jpg" class="glightbox" data-gallery="gallery-densidade" data-title="Sistema digital de medição de densidade">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-density-meter-setup.jpg" class="img-fluid" alt="Sistema digital automático para medição de densidade e índice de refração com amostrador" loading="lazy" width="250" height="167">
+                        </a>
+                         <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Pycnometer.jpg/800px-Pycnometer.jpg" class="glightbox" data-gallery="gallery-densidade" data-title="Picnômetro de vidro">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- Note: This is an external URL, ensure it's reliable or replace with local copy -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Pycnometer.jpg/800px-Pycnometer.jpg" class="img-fluid" alt="Exemplo de Picnômetro de vidro" loading="lazy" width="250" height="250">
+                         </a>
+                     </div>
+                     <h4>Equipamentos e Materiais</h4>
+                     <ul>
+                         <li><i class="fas fa-check-circle"></i> Picnômetro (de vidro ou metálico, com volume calibrado) OU Densímetro Digital (oscilatório)</li>
+                         <li><i class="fas fa-check-circle"></i> Balança Analítica (calibrada, 4 casas decimais)</li>
+                         <li><i class="fas fa-check-circle"></i> Banho termostático com controle preciso de temperatura</li>
+                         <li><i class="fas fa-check-circle"></i> Espátula</li>
+                         <li><i class="fas fa-check-circle"></i> Material de limpeza (solventes apropriados, papel absorvente)</li>
+                         <li><i class="fas fa-check-circle"></i> Termômetro calibrado</li>
+                         <li><i class="fas fa-check-circle"></i> Água Purificada (para calibração do volume)</li>
+                     </ul>
+                    <h4>Critérios de Aceitação</h4>
+                    <p>A densidade é a relação entre a massa de uma substância e o volume que ela ocupa (geralmente expressa em g/cm³ ou g/mL). É um parâmetro importante para o controle de processo e consistência entre lotes de semissólidos. A densidade medida deve estar dentro da faixa especificada durante o desenvolvimento do produto. Variações significativas podem indicar problemas como incorporação excessiva de ar durante a fabricação, perda de componentes voláteis, alterações na estrutura da emulsão/suspensão/gel ou erros na composição.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Viscosidade -->
+    <div class="modal fade" id="viscosidadeModal" tabindex="-1" aria-labelledby="viscosidadeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viscosidadeModalLabel"><i class="fas fa-wave-square"></i> Teste de Viscosidade - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Princípio e Relevância</h4>
+                    <p>A viscosidade é a medida da resistência de um fluido ao escoamento. Para formas farmacêuticas semissólidas (cremes, pomadas, géis), a viscosidade é crucial pois afeta diretamente a consistência, espalhabilidade, sensação tátil, liberação do ativo, estabilidade física (prevenção de separação de fases) e facilidade de remoção da embalagem. Muitos semissólidos exibem comportamento reológico complexo (não-newtoniano), onde a viscosidade varia com a taxa de cisalhamento aplicada (e.g., tixotropia, pseudoplasticidade).</p>
+                    <h4>Procedimento Geral (Viscosímetro Rotacional tipo Brookfield)</h4>
+                    <p>Transferir a amostra semissólida para um recipiente de tamanho padronizado (geralmente um béquer de 600 mL), evitando a incorporação de bolhas de ar. Acondicionar a amostra na temperatura de ensaio especificada (e.g., 25°C ± 1°C) usando um banho termostático. Selecionar o spindle (geometria de medição - disco, cilindro, T-bar com Helipath para amostras muito espessas/pastosas) e a velocidade de rotação (RPM) apropriados para a viscosidade esperada, de forma que a leitura de torque (% do fundo de escala) fique idealmente entre 10% e 100%. Conectar o spindle ao viscosímetro e imergi-lo cuidadosamente na amostra até a marca de imersão indicada no eixo do spindle. Ligar o motor na velocidade selecionada e permitir tempo suficiente para que a leitura de viscosidade se estabilize (o tempo varia com a amostra e condições). Registrar o valor de viscosidade aparente (geralmente em centipoise - cP, ou Pascal-segundo - Pa·s), juntamente com o modelo do viscosímetro, número do spindle, velocidade (RPM), temperatura do ensaio e a leitura de torque (%). Para caracterizar fluidos não-newtonianos, é comum realizar medições em múltiplas velocidades de rotação.</p>
+                     <div class="modal-image-gallery">
+                        <a href="lab-viscometer-helipath.jpg" class="glightbox" data-gallery="gallery-viscosidade" data-title="Viscosímetro com acessório Helipath">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-viscometer-helipath.jpg" class="img-fluid" alt="Viscosímetro digital com acessório Helipath (T-bar) medindo creme espesso" loading="lazy" width="250" height="167">
+                        </a>
+                         <a href="lab-rheometer-cream-concentric.jpg" class="glightbox" data-gallery="gallery-viscosidade" data-title="Reômetro com placas concêntricas">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-rheometer-cream-concentric.jpg" class="img-fluid" alt="Reômetro com geometria de placas concêntricas analisando creme branco" loading="lazy" width="250" height="167">
+                        </a>
+                        <a href="lab-rheometer-cream-plate.jpg" class="glightbox" data-gallery="gallery-viscosidade" data-title="Reômetro com placa-placa e curva reológica">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-rheometer-cream-plate.jpg" class="img-fluid" alt="Reômetro com geometria de placa-placa analisando creme branco com curva reológica na tela" loading="lazy" width="250" height="167">
+                        </a>
+                         <a href="lab-rheometer-cto.jpg" class="glightbox" data-gallery="gallery-viscosidade" data-title="Reômetro com controle de temperatura">
+                             <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                             <img src="lab-rheometer-cto.jpg" class="img-fluid" alt="Reômetro com câmara de temperatura controlada (CTO) analisando amostra amarela" loading="lazy" width="250" height="167">
+                         </a>
+                     </div>
+                     <h4>Equipamentos e Materiais</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Viscosímetro Rotacional (e.g., Brookfield) com conjunto de spindles apropriados (e acessório Helipath, se necessário)</li>
+                        <li><i class="fas fa-check-circle"></i> Reômetro (para análises reológicas mais detalhadas - curvas de fluxo, testes oscilatórios)</li>
+                        <li><i class="fas fa-check-circle"></i> Banho termostático com circulação para controle preciso da temperatura</li>
+                        <li><i class="fas fa-check-circle"></i> Recipiente para amostra (Béquer de tamanho padronizado)</li>
+                        <li><i class="fas fa-check-circle"></i> Suporte para o viscosímetro</li>
+                        <li><i class="fas fa-check-circle"></i> Termômetro calibrado</li>
+                        <li><i class="fas fa-check-circle"></i> Padrões de viscosidade certificados (óleos de silicone) para calibração/verificação</li>
+                        <li><i class="fas fa-check-circle"></i> Espátula (para transferência da amostra)</li>
+                    </ul>
+                    <h4>Critérios de Aceitação</h4>
+                    <p>A viscosidade aparente medida sob condições rigorosamente especificadas (aparelho, spindle, velocidade, temperatura, tempo) deve estar dentro da faixa definida na especificação do produto, estabelecida durante o desenvolvimento farmacêutico. A consistência da viscosidade entre diferentes lotes é um indicador crucial da reprodutibilidade do processo de fabricação e da estabilidade física do produto. Desvios significativos podem indicar problemas na composição, erros no processo, degradação de polímeros espessantes ou alterações na estrutura da formulação.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: pH -->
+    <div class="modal fade" id="phModal" tabindex="-1" aria-labelledby="phModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="phModalLabel"><i class="fas fa-flask"></i> Teste de pH (Semissólidos) - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Princípio e Relevância</h4>
+                     <p>O pH mede a acidez ou alcalinidade de uma solução aquosa ou dispersão. Para formas farmacêuticas semissólidas, o pH é um parâmetro crítico que influencia:
+                     <ul>
+                         <li><strong>Estabilidade do Fármaco:</strong> Muitos fármacos degradam em pHs específicos.</li>
+                         <li><strong>Eficácia do Fármaco:</strong> A ionização (e, portanto, a solubilidade e absorção) de muitos fármacos é dependente do pH.</li>
+                         <li><strong>Atividade de Conservantes:</strong> A eficácia de muitos conservantes é ótima em faixas de pH específicas.</li>
+                         <li><strong>Compatibilidade com a Pele/Mucosa:</strong> O pH fisiológico da pele é ligeiramente ácido (4.5-6.0). Produtos com pH muito distante disso podem causar irritação.</li>
+                         <li><strong>Estabilidade da Formulação:</strong> O pH pode afetar a viscosidade (e.g., géis de carbopol) e a estabilidade de emulsões.</li>
+                     </ul>
+                     </p>
+                    <h4>Procedimento Geral</h4>
+                    <p><strong>Calibração do pHmetro:</strong> Calibrar o pHmetro usando pelo menos duas (preferencialmente três) soluções tampão padrão certificadas que abranjam o pH esperado da amostra (e.g., pH 4.01, 7.00, 10.01). Realizar a calibração na mesma temperatura em que a amostra será medida.</p>
+                    <p><strong>Preparo da Amostra (Dispersão Aquosa):</strong> Pesar assepticamente uma quantidade definida da amostra semissólida (e.g., 1 g, 5 g ou 10 g) em um béquer limpo. Adicionar um volume definido de água purificada ou destilada (recentemente fervida e resfriada para remover CO2) para formar uma dispersão (e.g., 10% p/v). Agitar vigorosamente (com bastão de vidro ou agitador magnético) por um tempo definido para obter uma dispersão o mais homogênea possível.</p>
+                    <p><strong>Medição:</strong> Lavar o eletrodo de pH combinado com água purificada e secar cuidadosamente. Imergir a ponta do eletrodo na dispersão da amostra, garantindo que a junção de referência esteja submersa. Agitar suavemente (ou manter agitação constante se definido no método). Aguardar a estabilização da leitura de pH no visor do aparelho. Registrar o valor de pH e a temperatura da medição.</p>
+                    <p><i>Nota: Para algumas formulações (e.g., géis aquosos transparentes), a medição pode ser feita diretamente no produto, ou usando eletrodos específicos para superfícies/semissólidos. A necessidade de preparar uma dispersão deve ser validada.</i></p>
+                    <div class="modal-image-gallery">
+                       <a href="lab-ph-meter-setup.jpg" class="glightbox" data-gallery="gallery-ph" data-title="Medição de pH em laboratório">
+                          <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                          <img src="lab-ph-meter-setup.jpg" class="img-fluid" alt="Medidor de pH e condutividade com múltiplos eletrodos e soluções tampão" loading="lazy" width="250" height="167">
+                       </a>
+                    </div>
+                    <h4>Equipamentos e Materiais</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> pHmetro digital com compensação de temperatura (manual ou automática)</li>
+                        <li><i class="fas fa-check-circle"></i> Eletrodo de pH combinado (vidro) apropriado para a amostra (eletrodos de ponta plana ou de inserção podem ser úteis para medição direta em alguns casos)</li>
+                        <li><i class="fas fa-check-circle"></i> Soluções Tampão Padrão certificadas (pH 4.01, 7.00, 10.01, etc.)</li>
+                        <li><i class="fas fa-check-circle"></i> Água Purificada ou Destilada (com baixo teor de CO2)</li>
+                        <li><i class="fas fa-check-circle"></i> Béqueres ou recipientes limpos</li>
+                        <li><i class="fas fa-check-circle"></i> Agitador magnético e barra de agitação (opcional, mas recomendado para homogeneização)</li>
+                        <li><i class="fas fa-check-circle"></i> Balança Analítica ou Semianalítica</li>
+                         <li><i class="fas fa-check-circle"></i> Termômetro calibrado (se a compensação de temperatura não for automática)</li>
+                         <li><i class="fas fa-check-circle"></i> Bastão de vidro</li>
+                    </ul>
+                    <h4>Critérios de Aceitação</h4>
+                    <p>O valor de pH medido para a amostra (ou sua dispersão) deve estar dentro da faixa especificada na monografia do produto ou definida durante o desenvolvimento farmacêutico. Essa faixa é estabelecida considerando os fatores de compatibilidade fisiológica, estabilidade do ativo e da formulação, e eficácia do sistema conservante. Exemplo comum para um creme dermatológico: pH entre 5,0 e 6,5.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Espalhabilidade -->
+    <div class="modal fade" id="espalhabilidadeModal" tabindex="-1" aria-labelledby="espalhabilidadeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="espalhabilidadeModalLabel"><i class="fas fa-arrows-alt-h"></i> Teste de Espalhabilidade - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Princípio e Relevância</h4>
+                     <p>A espalhabilidade (ou "spreadability") avalia a facilidade com que um produto semissólido se espalha quando aplicado sobre uma superfície, sob ação de uma força. É um parâmetro importante relacionado à aplicação pelo usuário (facilidade de cobrir a área desejada com uma camada uniforme) e pode influenciar a biodisponibilidade do ativo. A umectabilidade ("wettability"), embora relacionada, refere-se mais especificamente à capacidade do produto de interagir e se espalhar sobre uma superfície específica (como a pele), dependendo das tensões superficiais. O teste clássico de espalhabilidade avalia a deformação da amostra sob compressão.</p>
+                    <h4>Procedimento Geral (Espalhabilidade - Método das Placas de Vidro)</h4>
+                    <p>Limpar e secar cuidadosamente duas placas de vidro circulares de tamanho e peso conhecidos (a placa inferior pode ter marcações concêntricas de diâmetro). Aplicar uma quantidade padronizada (e.g., 0,5 g ou 1,0 g) da amostra semissólida, previamente acondicionada na temperatura de teste, exatamente no centro da placa inferior. Cobrir cuidadosamente com a segunda placa de vidro, centralizando-a sobre a amostra. Opcionalmente, medir o diâmetro inicial da amostra espalhada apenas pelo peso da placa superior. Colocar um peso inicial conhecido (e.g., 50 g ou 100 g) sobre o centro da placa superior e aguardar por um tempo padronizado (e.g., 1 minuto). Medir o diâmetro (ou calcular a área) da amostra espalhada. Adicionar pesos sequencialmente (e.g., incrementos de 50 g) sobre a placa superior, aguardar o mesmo tempo padronizado após cada adição e medir o diâmetro correspondente. Continuar o processo até atingir um peso máximo definido ou até que o diâmetro de espalhamento não aumente mais significativamente.</p>
+                    <p><strong>Resultados Típicos:</strong> O resultado pode ser expresso como o diâmetro/área final atingido sob um peso e tempo específicos, ou como um gráfico de diâmetro/área versus peso aplicado. Um índice de espalhabilidade pode ser calculado a partir da inclinação da curva ou da área sob a curva.</p>
+                     <div class="modal-image-gallery">
+                        <a href="lab-rheometer-cream-concentric.jpg" class="glightbox" data-gallery="gallery-espalhabilidade" data-title="Reômetro pode avaliar propriedades relacionadas à espalhabilidade">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-rheometer-cream-concentric.jpg" class="img-fluid" alt="Teste de espalhabilidade/reologia com reômetro e placas concêntricas" loading="lazy" width="250" height="167">
+                        </a>
+                         <a href="lab-rheometer-cream-plate.jpg" class="glightbox" data-gallery="gallery-espalhabilidade" data-title="Reômetro com geometria placa-placa">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-rheometer-cream-plate.jpg" class="img-fluid" alt="Teste de espalhabilidade/reologia com reômetro e placa-placa" loading="lazy" width="250" height="167">
+                        </a>
+                        <a href="lab-tackiness-test-gel.jpg" class="glightbox" data-gallery="gallery-espalhabilidade" data-title="Teste de pegajosidade (relacionado à aplicação)">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-tackiness-test-gel.jpg" class="img-fluid" alt="Teste de pegajosidade (tackiness) de gel azul em balança analítica com placa de vidro" loading="lazy" width="250" height="167">
+                        </a>
+                     </div>
+                     <h4>Equipamentos e Materiais</h4>
+                     <ul>
+                         <li><i class="fas fa-check-circle"></i> Par de Placas de Vidro circulares (lisas, de peso e diâmetro conhecidos)</li>
+                         <li><i class="fas fa-check-circle"></i> Conjunto de Pesos Padronizados (com incrementos definidos)</li>
+                         <li><i class="fas fa-check-circle"></i> Reômetro (pode ser usado para análises mais sofisticadas relacionadas à espalhabilidade, como testes de compressão/squeeze flow)</li>
+                         <li><i class="fas fa-check-circle"></i> Balança Analítica (para pesar a amostra)</li>
+                         <li><i class="fas fa-check-circle"></i> Paquímetro ou Régua milimetrada (para medir diâmetros)</li>
+                         <li><i class="fas fa-check-circle"></i> Cronômetro</li>
+                         <li><i class="fas fa-check-circle"></i> Espátula</li>
+                         <li><i class="fas fa-check-circle"></i> Nível de bolha (para garantir horizontalidade das placas)</li>
+                         <li><i class="fas fa-check-circle"></i> Ambiente com temperatura controlada</li>
+                         <li><i class="fas fa-check-circle"></i> Tensiômetro (para análise específica de umectabilidade, se necessário)</li>
+                     </ul>
+                    <h4>Critérios de Aceitação</h4>
+                    <p>A área ou diâmetro de espalhamento obtido sob condições padronizadas (quantidade de amostra, peso aplicado, tempo) deve estar dentro dos limites definidos na especificação do produto. Este teste é particularmente útil para comparar a consistência e propriedades de aplicação entre diferentes lotes, avaliar o impacto de alterações na formulação ou processo de fabricação, e monitorar a estabilidade do produto ao longo do tempo (alterações na espalhabilidade podem indicar mudanças estruturais).</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Extrusão -->
+    <div class="modal fade" id="extrusaoModal" tabindex="-1" aria-labelledby="extrusaoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="extrusaoModalLabel"><i class="fas fa-compress-arrows-alt"></i> Teste de Extrusão/Aplicabilidade - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Princípio e Relevância</h4>
+                     <p>O teste de extrusão (ou extrudabilidade) avalia quantitativamente a força necessária para expelir um produto semissólido de sua embalagem primária, como uma bisnaga metálica ou plástica, ou uma seringa. Este parâmetro está diretamente relacionado à facilidade de uso pelo paciente/consumidor (aplicabilidade) e reflete a consistência e as propriedades de fluxo do produto sob pressão. É um teste importante para controle de qualidade, comparação entre lotes, avaliação de estabilidade (mudanças na força de extrusão podem indicar alterações na formulação) e otimização da embalagem.</p>
+                    <h4>Procedimento Geral (Extrusão de Bisnaga com Analisador de Textura)</h4>
+                    <p>Fixar a embalagem primária contendo a amostra (e.g., bisnaga) verticalmente em um suporte apropriado na base do analisador de textura (texturômetro). O bico da bisnaga deve estar aberto e posicionado sobre um recipiente coletor ou a base do aparelho. Selecionar um probe de compressão adequado (geralmente plano e com diâmetro suficiente para cobrir a área de compressão na base da bisnaga). Posicionar o probe alguns milímetros acima da base da bisnaga. Programar o instrumento para mover o probe para baixo a uma velocidade constante (e.g., 1 mm/s, 2 mm/s ou 10 mm/s) por uma distância definida ou até que uma certa quantidade de produto seja extrudada. O aparelho mede e registra continuamente a força (em Newtons ou gramas-força) aplicada pelo probe em função da distância percorrida ou do tempo.</p>
+                    <p><strong>Análise dos Dados:</strong> A curva resultante de Força vs. Distância/Tempo permite obter parâmetros quantitativos como:
+                        <ul>
+                            <li><strong>Força Máxima de Extrusão (Pico de Força):</strong> A força máxima registrada durante a compressão.</li>
+                            <li><strong>Força Média de Extrusão:</strong> A força média durante a fase de platô da extrusão.</li>
+                            <li><strong>Trabalho de Extrusão (Área sob a Curva):</strong> A energia total necessária para extrudar o produto na distância definida.</li>
+                        </ul>
+                    </p>
+                    <div class="modal-image-gallery">
+                       <a href="lab-texture-analyzer-toothpaste.jpg" class="glightbox" data-gallery="gallery-extrusao" data-title="Teste de extrusão de pasta de dente com texturômetro">
+                          <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                          <img src="lab-texture-analyzer-toothpaste.jpg" class="img-fluid" alt="Texturômetro realizando teste de extrusão em tubo de pasta de dente com gráfico na tela do laptop" loading="lazy" width="250" height="167">
+                       </a>
+                        <a href="lab-extrusion-test-syringe.jpg" class="glightbox" data-gallery="gallery-extrusao" data-title="Teste de extrusão de gel em seringa">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-extrusion-test-syringe.jpg" class="img-fluid" alt="Teste de extrusão de gel viscoso de uma seringa com aparelho de textura" loading="lazy" width="250" height="167">
+                        </a>
+                    </div>
+                     <h4>Equipamentos e Materiais</h4>
+                     <ul>
+                         <li><i class="fas fa-check-circle"></i> Analisador de Textura (Texturômetro) com célula de carga apropriada</li>
+                         <li><i class="fas fa-check-circle"></i> Suporte específico para fixar a embalagem (bisnaga, seringa)</li>
+                         <li><i class="fas fa-check-circle"></i> Probe de compressão de geometria adequada</li>
+                         <li><i class="fas fa-check-circle"></i> Software para controle do instrumento e análise de dados</li>
+                         <li><i class="fas fa-check-circle"></i> Amostras do produto na embalagem primária final</li>
+                         <li><i class="fas fa-check-circle"></i> Ambiente com temperatura controlada</li>
+                     </ul>
+                     <h4>Critérios de Aceitação</h4>
+                     <p>Os valores dos parâmetros de extrusão medidos (e.g., Força Máxima, Trabalho de Extrusão) sob condições de teste padronizadas (velocidade, distância, temperatura) devem estar dentro das faixas estabelecidas na especificação do produto. A consistência destes valores entre diferentes lotes é fundamental para garantir uma experiência de uso uniforme para o consumidor. Alterações significativas na força de extrusão podem indicar variações na viscosidade da formulação, problemas no processo de envase ou alterações na própria embalagem.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Endotoxinas -->
+    <div class="modal fade" id="endotoxinasModal" tabindex="-1" aria-labelledby="endotoxinasModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="endotoxinasModalLabel"><i class="fas fa-bacterium"></i> Teste de Endotoxinas Bacterianas (LAL) - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Princípio e Relevância</h4>
+                    <p>Endotoxinas são lipopolissacarídeos (LPS) presentes na membrana externa de bactérias Gram-negativas e são potentes pirogênios (causadores de febre) em humanos e animais. O teste de Lisado de Amebócitos de Limulus (LAL), derivado do sangue do caranguejo-ferradura (<i>Limulus polyphemus</i>), é o método farmacopeico padrão para detectar e/ou quantificar endotoxinas bacterianas. Este teste é crítico para garantir a segurança de produtos farmacêuticos parenterais (injetáveis, infusões), dispositivos médicos que entram em contato com o sistema circulatório ou líquor, e também pode ser relevante para produtos oftálmicos ou aplicados em grandes áreas de pele não íntegra ou mucosas. Um teste alternativo é o Teste de Ativação de Monócitos (MAT), que detecta tanto endotoxinas quanto outros pirogênios não-endotoxinas.</p>
+                    <h4>Métodos LAL Comuns</h4>
+                    <ul>
+                        <li><strong>Método de Gelificação (Gel-Clot):</strong> O mais antigo, é qualitativo ou semiquantitativo. O reagente LAL coagula na presença de endotoxinas acima de um certo nível (sensibilidade λ do lisado). O resultado é observado visualmente como formação de gel.</li>
+                        <li><strong>Método Turbidimétrico Cinético:</strong> Quantitativo. Mede o aumento da turvação (absorbância) ao longo do tempo, que é proporcional à concentração de endotoxinas. Requer leitor de microplacas com incubação.</li>
+                        <li><strong>Método Cromogênico Cinético:</strong> Quantitativo. O reagente LAL contém um substrato cromogênico que libera um produto colorido (geralmente amarelo) na presença de endotoxinas. A intensidade da cor, medida ao longo do tempo, é proporcional à concentração. É geralmente o método mais sensível.</li>
+                    </ul>
+                    <h4>Procedimento Geral (Conceitos Chave)</h4>
+                    <p><strong>Material Apirogênico:</strong> Toda vidraria, ponteiras, tubos, microplacas devem ser apirogênicos (livres de endotoxinas). Geralmente obtido por tratamento térmico (calor seco a ≥250°C por ≥30 min) ou uso de material certificado apirogênico descartável.</p>
+                    <p><strong>Água para LAL (LRW):</strong> Água estéril e apirogênica, usada para reconstituir reagentes e diluir amostras.</p>
+                    <p><strong>Preparo da Amostra e Diluição Máxima Válida (DMV):</strong> A amostra deve ser extraída ou diluída em LRW para evitar interferência (inibição ou realce) no teste LAL. A DMV é a maior diluição permitida na qual o limite de endotoxina do produto ainda pode ser detectado. DMV = (Limite de Endotoxina do Produto * Concentração do Produto) / Sensibilidade do Lisado (λ).</p>
+                    <p><strong>Controles Essenciais:</strong>
+                        <ul>
+                            <li><u>Controle Negativo:</u> LRW apenas (não deve reagir).</li>
+                            <li><u>Controle Positivo do Reagente:</u> Endotoxina Padrão de Referência (CSE ou RSE) em LRW na concentração λ (para Gel-Clot) ou em várias concentrações (para curva padrão nos métodos quantitativos). Deve reagir conforme esperado.</li>
+                            <li><u>Controle Positivo do Produto (PPC):</u> Amostra diluída na DMV (ou menor diluição válida) adicionada de CSE. Serve para verificar se a amostra, na diluição testada, não inibe nem realça a reação LAL. A recuperação da endotoxina adicionada deve estar dentro de limites aceitáveis (geralmente 50-200%).</li>
+                        </ul>
+                    </p>
+                    <p><strong>Condições de Ensaio:</strong> O teste é tipicamente realizado a 37°C ± 1°C em banho-maria, bloco de aquecimento ou leitor de microplacas com controle de temperatura.</p>
+                    <div class="modal-image-gallery">
+                       <a href="lab-incubator-microplate-reader.jpg" class="glightbox" data-gallery="gallery-lal" data-title="Leitor de microplacas para teste LAL cinético">
+                          <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                          <img src="lab-incubator-microplate-reader.jpg" class="img-fluid" alt="Leitor de microplacas/incubadora mostrando teste cinético LAL em placa de 96 poços" loading="lazy" width="250" height="167">
+                       </a>
+                       <a href="https://www.biovendor-lm.com/data/Image/lal_reagent_water_3.png" class="glightbox" data-gallery="gallery-lal" data-title="Frasco de Água para LAL (LRW)">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <!-- External URL, consider local copy -->
+                           <img src="https://www.biovendor-lm.com/data/Image/lal_reagent_water_3.png" class="img-fluid" alt="Exemplo de frasco de Água para LAL (LRW)" loading="lazy" width="250" height="250">
+                       </a>
+                    </div>
+                    <h4>Equipamentos e Materiais</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Reagente LAL (específico para o método: gel-clot, turbidimétrico ou cromogênico)</li>
+                        <li><i class="fas fa-check-circle"></i> Água para LAL (LRW)</li>
+                        <li><i class="fas fa-check-circle"></i> Endotoxina Padrão de Referência (CSE ou RSE)</li>
+                        <li><i class="fas fa-check-circle"></i> Material apirogênico: Tubos de ensaio de vidro, microplacas de 96 poços, ponteiras de micropipeta</li>
+                        <li><i class="fas fa-check-circle"></i> Micropipetas calibradas</li>
+                        <li><i class="fas fa-check-circle"></i> Banho-maria ou Bloco de aquecimento (precisão ± 1°C)</li>
+                        <li><i class="fas fa-check-circle"></i> Cronômetro</li>
+                        <li><i class="fas fa-check-circle"></i> Leitor de Microplacas com software apropriado (para métodos cinéticos)</li>
+                        <li><i class="fas fa-check-circle"></i> Vórtex</li>
+                        <li><i class="fas fa-check-circle"></i> Forno de despirogenização (≥250°C)</li>
+                    </ul>
+                    <h4>Critérios de Aceitação</h4>
+                     <p>O teste só é válido se todos os controles (negativo, positivo do reagente, positivo do produto) funcionarem conforme esperado (e.g., negativo não reage, positivo reage, recuperação no PPC entre 50-200%). Para o produto:
+                         <ul>
+                            <li><u>Método Gel-Clot:</u> O resultado deve ser negativo (ausência de formação de gel firme que se mantém invertido) na diluição testada (≤ DMV).</li>
+                            <li><u>Métodos Quantitativos:</u> A concentração de endotoxinas encontrada na amostra (calculada considerando a diluição) deve ser inferior ao Limite de Endotoxina especificado para o produto (expresso em EU/mL, EU/mg, EU/UI ou EU/dispositivo).</li>
+                         </ul>
+                     </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Contagem Microbiológica -->
+    <div class="modal fade" id="contagemMicrobiologicaModal" tabindex="-1" aria-labelledby="contagemMicrobiologicaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contagemMicrobiologicaModalLabel"><i class="fas fa-microscope"></i> Contagem Microbiológica - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Princípio e Relevância</h4>
+                    <p>Este teste, também conhecido como "Limites Microbianos" ou "Carga Microbiana" (Bioburden), avalia a quantidade e, em alguns casos, a presença de tipos específicos de microrganismos em produtos farmacêuticos não estéreis (como comprimidos, cápsulas, xaropes, cremes, pomadas). O objetivo é garantir que a carga microbiana esteja abaixo de níveis aceitáveis definidos pelas farmacopeias e que microrganismos patogênicos específicos (objeccionáveis para a via de administração) estejam ausentes, assegurando a segurança do produto para o uso pretendido.</p>
+                    <h4>Testes Principais (Farmacopeia Brasileira / USP / Ph. Eur.)</h4>
+                    <ul>
+                        <li><strong>Contagem Total de Microrganismos Aeróbios Mesófilos (TAMC / Total Aerobic Microbial Count):</strong> Estima o número total de bactérias aeróbias viáveis que crescem em condições mesófilas (geralmente 30-35°C). Usa meio de cultura rico como Agar Caseína-Soja (TSA).</li>
+                        <li><strong>Contagem Total de Fungos e Leveduras (TYMC / Total Yeast and Mould Count):</strong> Estima o número total de bolores e leveduras viáveis que crescem em condições apropriadas (geralmente 20-25°C). Usa meio seletivo como Agar Sabouraud Dextrose (SDA), frequentemente com antibióticos para inibir bactérias.</li>
+                        <li><strong>Pesquisa de Microrganismos Patogênicos Específicos (Test for Specified Microorganisms):</strong> Verifica a ausência de certos microrganismos que são considerados inaceitáveis dependendo da via de administração do produto. Exemplos comuns incluem:
+                            <ul>
+                                <li><i>Staphylococcus aureus</i> e <i>Pseudomonas aeruginosa</i> (para produtos tópicos, nasais, auriculares, vaginais)</li>
+                                <li><i>Salmonella</i> spp. e <i>Escherichia coli</i> (para produtos orais e retais)</li>
+                                <li><i>Clostridium</i> spp. (pode ser relevante dependendo do produto)</li>
+                                <li><i>Candida albicans</i> (para produtos orais, tópicos, vaginais)</li>
+                            </ul>
+                         Utiliza meios de enriquecimento seletivos seguidos de plaqueamento em meios seletivos/diferenciais e testes de confirmação (bioquímicos, coloração de Gram, etc.).</li>
+                    </ul>
+                    <h4>Procedimento Geral (Exemplo: Método Pour Plate para TAMC/TYMC)</h4>
+                    <p><strong>Preparo da Amostra:</strong> Pesar ou medir assepticamente uma quantidade definida da amostra (e.g., 1g/1mL ou 10g/10mL, dependendo do limite esperado). Dispersar/dissolver a amostra em um volume definido de diluente estéril tamponado (e.g., Solução Salina Tamponada pH 7.2, Peptona Salina Tamponada) para obter uma diluição inicial (geralmente 1:10). Homogeneizar bem (agitação, vórtex, stomacher). Se necessário (para amostras com alta carga esperada ou para neutralizar conservantes), realizar diluições seriadas decimais (1:100, 1:1000...). A validade do método (neutralização de conservantes) deve ser demonstrada.</p>
+                    <p><strong>Plaqueamento (Pour Plate):</strong> Pipetar assepticamente 1 mL da diluição apropriada (ou diluições) em placas de Petri estéreis (geralmente em duplicata ou triplicata). Adicionar aproximadamente 15-20 mL de meio de cultura apropriado (TSA para TAMC; SDA para TYMC) previamente fundido e resfriado a cerca de 45-50°C. Misturar cuidadosamente o inóculo com o meio por movimentos circulares e em forma de oito, e deixar solidificar em superfície plana.</p>
+                    <p><strong>Incubação:</strong> Incubar as placas invertidas nas condições apropriadas: TSA a 30-35°C por 3-5 dias; SDA a 20-25°C por 5-7 dias.</p>
+                    <p><strong>Contagem e Cálculo:</strong> Após incubação, contar as Unidades Formadoras de Colônias (UFC) visíveis nas placas que contenham um número adequado para contagem (geralmente entre 25-250 UFC para TAMC, e 15-150 UFC para TYMC, mas os limites podem variar). Calcular o número médio de UFC por placa para a diluição contável. Multiplicar pelo fator de diluição para obter o resultado final em UFC por grama ou mL da amostra original.</p>
+                    <div class="modal-image-gallery">
+                       <a href="lab-colony-counter-maldi.jpg" class="glightbox" data-gallery="gallery-microbio" data-title="Contagem de colônias e identificação">
+                          <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                          <img src="lab-colony-counter-maldi.jpg" class="img-fluid" alt="Sistema de contagem de colônias com câmera e tela exibindo placa de Petri e identificação de E. coli por MALDI-TOF" loading="lazy" width="250" height="167">
+                       </a>
+                        <a href="lab-petri-dishes-microbiology.jpg" class="glightbox" data-gallery="gallery-microbio" data-title="Placas de Petri com diferentes crescimentos">
+                           <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                           <img src="lab-petri-dishes-microbiology.jpg" class="img-fluid" alt="Três placas de Petri: controle negativo, crescimento bacteriano e crescimento de fungos (mofo)" loading="lazy" width="250" height="167">
+                        </a>
+                         <a href="https://asm.org/ASM/media/Article-Images/Agar-plate-with-bacterial-colonies-Staphylococcus-epidermidis-image-for-promo-on-JCM-article-375x281.jpg?ext=.jpg" class="glightbox" data-gallery="gallery-microbio" data-title="Colônias bacterianas em placa de ágar">
+                            <!-- IMPORTANT: Replace width/height with actual image dimensions -->
+                            <!-- External URL -->
+                            <img src="https://asm.org/ASM/media/Article-Images/Agar-plate-with-bacterial-colonies-Staphylococcus-epidermidis-image-for-promo-on-JCM-article-375x281.jpg?ext=.jpg" class="img-fluid" alt="Close-up de colônias bacterianas brancas em placa de ágar vermelho" loading="lazy" width="250" height="188">
+                         </a>
+                    </div>
+                    <h4>Equipamentos e Materiais</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Cabine de Segurança Biológica (Fluxo Laminar) para trabalho asséptico</li>
+                        <li><i class="fas fa-check-circle"></i> Autoclave (para esterilização de meios e materiais)</li>
+                        <li><i class="fas fa-check-circle"></i> Estufas de Incubação com controle de temperatura</li>
+                        <li><i class="fas fa-check-circle"></i> Meios de Cultura desidratados ou prontos para uso (TSA, SDA, meios seletivos/enriquecimento)</li>
+                        <li><i class="fas fa-check-circle"></i> Diluentes estéreis tamponados</li>
+                        <li><i class="fas fa-check-circle"></i> Material estéril: Placas de Petri, tubos de ensaio, pipetas volumétricas ou micropipetas com ponteiras estéreis, alças de inoculação, espátulas Drigalski</li>
+                        <li><i class="fas fa-check-circle"></i> Balança Analítica/Semianalítica</li>
+                        <li><i class="fas fa-check-circle"></i> Vórtex, Agitador tipo Stomacher (para amostras sólidas/semissólidas)</li>
+                        <li><i class="fas fa-check-circle"></i> Banho-maria (para manter meios fundidos)</li>
+                        <li><i class="fas fa-check-circle"></i> Contador de Colônias (manual ou automático)</li>
+                        <li><i class="fas fa-check-circle"></i> Microscópio (para coloração de Gram e confirmação)</li>
+                        <li><i class="fas fa-check-circle"></i> Reagentes para testes bioquímicos de confirmação</li>
+                    </ul>
+                    <h4>Critérios de Aceitação</h4>
+                     <p>Os limites máximos aceitáveis para TAMC e TYMC (expressos em UFC/g ou UFC/mL) e a exigência de ausência de patógenos específicos em uma quantidade definida da amostra (e.g., ausência em 1g ou 10g) são definidos pelas farmacopeias (USP <61> e <62>, Ph. Eur. 2.6.12 e 2.6.13, FB 5.5) e variam significativamente com base na via de administração e natureza do produto. Exemplos gerais:
+                         <ul>
+                            <li><u>Produtos Orais (aquosos):</u> TAMC ≤ 1000 UFC/mL, TYMC ≤ 100 UFC/mL, Ausência de <i>E. coli</i> em 1mL.</li>
+                            <li><u>Produtos Orais (não aquosos):</u> TAMC ≤ 100 UFC/g, TYMC ≤ 10 UFC/g, Ausência de <i>E. coli</i> em 1g.</li>
+                            <li><u>Produtos Tópicos:</u> TAMC ≤ 100 UFC/g, TYMC ≤ 10 UFC/g, Ausência de <i>S. aureus</i> e <i>P. aeruginosa</i> em 1g.</li>
+                         </ul>
+                     O produto é considerado aprovado se as contagens estiverem abaixo dos limites e os patógenos especificados estiverem ausentes.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modals -->
+
+
+    <button id="btnScrollToTop" title="Voltar ao topo" aria-label="Voltar ao topo"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // Preloader fade out logic
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                window.addEventListener('load', () => {
+                    preloader.classList.add('fade-out');
+                    // Remove preloader from DOM after transition
+                    preloader.addEventListener('transitionend', () => {
+                         if (preloader.parentNode) {
+                           preloader.parentNode.removeChild(preloader);
+                         }
+                    });
+                    // Fallback removal in case transitionend event doesn't fire
+                     setTimeout(() => {
+                          if (preloader && preloader.parentNode) {
+                            preloader.parentNode.removeChild(preloader);
+                          }
+                     }, 600); // Slightly longer than transition duration
+                });
+            }
+
+            // Initialize AOS (Animate on Scroll) library
+            AOS.init({
+                duration: 850,
+                once: true, // Animation happens only once
+                offset: 110, // Trigger animation when element is 110px from viewport edge
+                easing: 'ease-out-cubic',
+            });
+
+             // Smooth scrolling for internal links (Sumário)
+             const navLinks = document.querySelectorAll('a.main-nav-link[href^="#"]');
+             const topOffset = 60; // Adjust offset if you have a fixed header
+
+             navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        let offsetPosition = elementPosition - topOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Scroll-to-top button visibility and functionality
+            const btnScrollToTop = document.getElementById('btnScrollToTop');
+            const scrollThreshold = 400; // Show button after scrolling 400px
+
+            if(btnScrollToTop) {
+                const checkScroll = () => {
+                    if (window.scrollY > scrollThreshold) {
+                        btnScrollToTop.classList.add('show');
+                    } else {
+                        btnScrollToTop.classList.remove('show');
+                    }
+                };
+
+                window.addEventListener('scroll', checkScroll);
+                checkScroll(); // Initial check in case page loads already scrolled
+
+                btnScrollToTop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                     window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                     });
+                });
+            }
+
+            // Typed.js animation for hero sub-headline
+            if (typeof Typed !== 'undefined' && document.querySelector('.typed-text')) {
+                 var typed = new Typed('.typed-text', {
+                     strings: [
+                        "garantir segurança.",
+                        "assegurar eficácia.",
+                        "cumprir as normas.",
+                        "validar processos.",
+                        "inovar na farmácia.",
+                        "estudantes de farmácia.",
+                        "profissionais da área."
+                    ],
+                     typeSpeed: 55,
+                     backSpeed: 35,
+                     backDelay: 2100,
+                     startDelay: 600,
+                     loop: true,
+                     smartBackspace: true,
+                     cursorChar: '|',
+                 });
+            }
+
+            // Initialize Bootstrap Tooltips
+            if (typeof bootstrap !== 'undefined' && typeof bootstrap.Tooltip !== 'undefined') {
+                const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                tooltipTriggerList.map(function (tooltipTriggerEl) {
+                   return new bootstrap.Tooltip(tooltipTriggerEl, {
+                     boundary: 'window' // Prevent tooltip from being cut off at viewport edges
+                   })
+                 });
+            }
+
+            // Set current year in footer
+            const currentYearElement = document.getElementById('currentYear');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+
+            // Initialize GLightbox for modal image galleries
+            if (typeof GLightbox !== 'undefined') {
+                 const lightbox = GLightbox({
+                    selector: '.glightbox', // Use class selector for all gallery images
+                    touchNavigation: true,
+                    loop: true,
+                    zoomable: true,
+                    // Optional: Add more configuration if needed
+                    // openEffect: 'zoom',
+                    // closeEffect: 'fade',
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>
