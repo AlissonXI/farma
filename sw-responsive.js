@@ -1,3 +1,5 @@
+// ===== RESPONSIVE SERVICE WORKER =====
+
 const CACHE_NAME = 'farma-guide-responsive-v2';
 const STATIC_CACHE = 'farma-static-v2';
 const DYNAMIC_CACHE = 'farma-dynamic-v2';
@@ -230,3 +232,120 @@ function isAPIRequest(request) {
            url.includes('analytics') ||
            url.includes('gtag');
 }
+
+// Background sync for offline functionality
+self.addEventListener('sync', event => {
+    console.log('Background sync triggered:', event.tag);
+    
+    if (event.tag === 'background-sync') {
+        event.waitUntil(doBackgroundSync());
+    }
+});
+
+async function doBackgroundSync() {
+    try {
+        // Sync any pending data when connection is restored
+        console.log('Performing background sync...');
+        
+        // You can add specific sync logic here
+        // For example, syncing user preferences, favorites, etc.
+        
+        return Promise.resolve();
+    } catch (error) {
+        console.error('Background sync failed:', error);
+        return Promise.reject(error);
+    }
+}
+
+// Push notification handling
+self.addEventListener('push', event => {
+    console.log('Push notification received:', event);
+    
+    const options = {
+        body: event.data ? event.data.text() : 'Nova atualização disponível!',
+        icon: '/favicon.ico',
+        badge: '/favicon.ico',
+        vibrate: [100, 50, 100],
+        data: {
+            dateOfArrival: Date.now(),
+            primaryKey: 1
+        },
+        actions: [
+            {
+                action: 'explore',
+                title: 'Ver agora',
+                icon: '/favicon.ico'
+            },
+            {
+                action: 'close',
+                title: 'Fechar',
+                icon: '/favicon.ico'
+            }
+        ]
+    };
+    
+    event.waitUntil(
+        self.registration.showNotification('Guia Farmacêutico', options)
+    );
+});
+
+// Notification click handling
+self.addEventListener('notificationclick', event => {
+    console.log('Notification clicked:', event);
+    
+    event.notification.close();
+    
+    if (event.action === 'explore') {
+        event.waitUntil(
+            clients.openWindow('/')
+        );
+    }
+});
+
+// Message handling for communication with main thread
+self.addEventListener('message', event => {
+    console.log('Service Worker received message:', event.data);
+    
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
+    
+    if (event.data && event.data.type === 'GET_VERSION') {
+        event.ports[0].postMessage({ version: CACHE_NAME });
+    }
+});
+
+// Error handling
+self.addEventListener('error', event => {
+    console.error('Service Worker error:', event.error);
+});
+
+self.addEventListener('unhandledrejection', event => {
+    console.error('Service Worker unhandled rejection:', event.reason);
+});
+
+// Performance monitoring
+self.addEventListener('fetch', event => {
+    const startTime = performance.now();
+    
+    event.waitUntil(
+        event.respondWith(
+            (async () => {
+                try {
+                    const response = await fetch(event.request);
+                    const endTime = performance.now();
+                    
+                    // Log performance metrics
+                    console.log(`Fetch ${event.request.url} took ${endTime - startTime}ms`);
+                    
+                    return response;
+                } catch (error) {
+                    console.error('Fetch failed:', error);
+                    throw error;
+                }
+            })()
+        )
+    );
+});
+
+console.log('Responsive Service Worker loaded');
