@@ -211,6 +211,139 @@
             opacity: 1;
         }
 
+        /* Search functionality styles */
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-results {
+            margin-top: 1rem;
+            min-height: 20px;
+        }
+
+        .search-highlight {
+            background-color: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .sumario-list li {
+            transition: all 0.3s ease;
+        }
+
+        .sumario-list li.hidden {
+            display: none;
+        }
+
+        .sumario-list li.highlighted {
+            background-color: var(--primary-light);
+            border-radius: var(--border-radius);
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+        }
+
+        /* Print styles */
+        @media print {
+            * {
+                background: transparent !important;
+                color: black !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+
+            .hero-header {
+                background: white !important;
+                color: black !important;
+            }
+
+            .content-section {
+                page-break-inside: avoid;
+                margin-bottom: 2rem;
+            }
+
+            .modal {
+                display: none !important;
+            }
+
+            .btn-scroll-top,
+            .search-container,
+            .preloader {
+                display: none !important;
+            }
+
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+                page-break-inside: avoid;
+            }
+
+            a[href^="#"]:after {
+                content: " (página " attr(href) ")";
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --light-bg: hsl(215, 30%, 15%);
+                --white-color: hsl(215, 28%, 22%);
+                --text-dark: hsl(210, 25%, 96%);
+                --text-medium: hsl(210, 25%, 85%);
+                --text-light: hsl(215, 28%, 22%);
+            }
+
+            body {
+                background-color: var(--light-bg);
+                color: var(--text-dark);
+            }
+
+            .hero-header {
+                background: var(--dark-bg) !important;
+            }
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .search-container .input-group {
+                flex-direction: column;
+            }
+            
+            .search-container .input-group > * {
+                margin-bottom: 0.5rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Action buttons styling */
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-buttons .btn {
+            transition: all 0.3s ease;
+        }
+
+        .action-buttons .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
         #preloader {
             position: fixed;
             top: 0;
@@ -1249,8 +1382,31 @@
     <main id="main-content">
         <section id="sumario" class="content-section">
             <div class="container">
-                <h2 data-aos="fade-up"><i class="fas fa-list-ul"></i> Sumário</h2>
-                <ul class="sumario-list" data-aos="fade-up" data-aos-delay="100">
+                <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up">
+                    <h2><i class="fas fa-list-ul"></i> Sumário</h2>
+                    <div class="action-buttons">
+                        <button class="btn btn-outline-primary btn-sm" onclick="window.print()" title="Imprimir guia">
+                            <i class="fas fa-print"></i>
+                        </button>
+                        <button class="btn btn-outline-success btn-sm" onclick="shareContent()" title="Compartilhar">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Search functionality -->
+                <div class="search-container" data-aos="fade-up" data-aos-delay="50">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Buscar por tópico..." aria-label="Buscar no sumário">
+                        <button class="btn btn-outline-secondary" type="button" id="clearSearch" aria-label="Limpar busca">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                
+                <ul class="sumario-list" data-aos="fade-up" data-aos-delay="100" id="sumarioList">
                      <li><a class="main-nav-link" href="#introducao"><i class="fas fa-book-open"></i> Introdução</a> <span>4,5</span></li>
                      <li><a class="main-nav-link" href="#justificativa"><i class="fas fa-lightbulb"></i> Justificativa</a> <span>6</span></li>
                      <li><a class="main-nav-link" href="#objetivos"><i class="fas fa-crosshairs"></i> Objetivos</a> <span>7</span></li>
@@ -2577,6 +2733,189 @@
                     this.style.filter = 'grayscale(100%)';
                 });
             });
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const clearSearchBtn = document.getElementById('clearSearch');
+            const sumarioList = document.getElementById('sumarioList');
+            const searchResults = document.getElementById('searchResults');
+
+            if (searchInput && sumarioList) {
+                const originalItems = Array.from(sumarioList.children);
+
+                function performSearch(query) {
+                    const searchTerm = query.toLowerCase().trim();
+                    
+                    if (searchTerm === '') {
+                        // Reset to original state
+                        originalItems.forEach(item => {
+                            item.classList.remove('hidden', 'highlighted');
+                        });
+                        searchResults.innerHTML = '';
+                        return;
+                    }
+
+                    const matchingItems = [];
+                    
+                    originalItems.forEach(item => {
+                        const link = item.querySelector('a');
+                        const text = link.textContent.toLowerCase();
+                        
+                        if (text.includes(searchTerm)) {
+                            item.classList.remove('hidden');
+                            item.classList.add('highlighted');
+                            matchingItems.push(item);
+                        } else {
+                            item.classList.add('hidden');
+                            item.classList.remove('highlighted');
+                        }
+                    });
+
+                    // Show search results summary
+                    if (matchingItems.length > 0) {
+                        searchResults.innerHTML = `<div class="alert alert-info">
+                            <i class="fas fa-search"></i> 
+                            Encontrados ${matchingItems.length} resultado(s) para "${query}"
+                        </div>`;
+                    } else {
+                        searchResults.innerHTML = `<div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle"></i> 
+                            Nenhum resultado encontrado para "${query}"
+                        </div>`;
+                    }
+                }
+
+                // Search input event
+                searchInput.addEventListener('input', function() {
+                    performSearch(this.value);
+                });
+
+                // Clear search button
+                if (clearSearchBtn) {
+                    clearSearchBtn.addEventListener('click', function() {
+                        searchInput.value = '';
+                        performSearch('');
+                        searchInput.focus();
+                    });
+                }
+
+                // Keyboard shortcuts
+                searchInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        this.value = '';
+                        performSearch('');
+                    }
+                });
+            }
+
+            // Analytics and performance tracking
+            function trackEvent(category, action, label) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', action, {
+                        'event_category': category,
+                        'event_label': label
+                    });
+                }
+                
+                // Custom analytics
+                console.log(`Event: ${category} - ${action} - ${label}`);
+            }
+
+            // Track page views and interactions
+            document.addEventListener('DOMContentLoaded', function() {
+                trackEvent('engagement', 'page_view', window.location.pathname);
+                
+                // Track modal opens
+                const modalTriggers = document.querySelectorAll('[data-bs-toggle="modal"]');
+                modalTriggers.forEach(trigger => {
+                    trigger.addEventListener('click', function() {
+                        const modalId = this.getAttribute('data-bs-target');
+                        trackEvent('interaction', 'modal_open', modalId);
+                    });
+                });
+
+                // Track search usage
+                if (searchInput) {
+                    searchInput.addEventListener('input', function() {
+                        if (this.value.length > 2) {
+                            trackEvent('search', 'search_query', this.value);
+                        }
+                    });
+                }
+            });
+
+            // Performance monitoring
+            if ('performance' in window) {
+                window.addEventListener('load', function() {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+                    
+                    console.log('Performance Metrics:');
+                    console.log('- Page Load Time:', loadTime, 'ms');
+                    console.log('- DOM Content Loaded:', perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart, 'ms');
+                    console.log('- First Paint:', performance.getEntriesByName('first-paint')[0]?.startTime || 'N/A', 'ms');
+                    
+                    // Track performance
+                    if (loadTime > 3000) {
+                        trackEvent('performance', 'slow_load', loadTime.toString());
+                    }
+                });
+            }
+
+            // Error tracking
+            window.addEventListener('error', function(e) {
+                trackEvent('error', 'javascript_error', e.message);
+                console.error('JavaScript Error:', e.error);
+            });
+
+            // Offline/Online status
+            window.addEventListener('online', function() {
+                trackEvent('connectivity', 'online', 'user_online');
+            });
+
+            window.addEventListener('offline', function() {
+                trackEvent('connectivity', 'offline', 'user_offline');
+            });
+
+            // Share functionality
+            window.shareContent = function() {
+                const shareData = {
+                    title: 'Guia Visual Interativo: Controle de Qualidade Farmacêutico',
+                    text: 'Guia completo, interativo e visualmente aprimorado sobre controle de qualidade em laboratórios farmacêuticos.',
+                    url: window.location.href
+                };
+
+                if (navigator.share) {
+                    navigator.share(shareData)
+                        .then(() => {
+                            trackEvent('social', 'share_success', 'native_share');
+                        })
+                        .catch((error) => {
+                            console.log('Error sharing:', error);
+                            fallbackShare();
+                        });
+                } else {
+                    fallbackShare();
+                }
+            };
+
+            function fallbackShare() {
+                // Copy URL to clipboard
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Link copiado para a área de transferência!');
+                    trackEvent('social', 'share_fallback', 'clipboard_copy');
+                }).catch(() => {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = window.location.href;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    alert('Link copiado para a área de transferência!');
+                    trackEvent('social', 'share_fallback', 'exec_command');
+                });
+            }
 
         });
     </script>

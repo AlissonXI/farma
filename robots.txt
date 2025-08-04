@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alissonxi.github.io/farma/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
