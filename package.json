@@ -1,0 +1,84 @@
+{
+  "name": "guia-controle-qualidade-farmaceutico",
+  "version": "1.0.0",
+  "description": "Guia Visual Interativo sobre Controle de Qualidade em Laboratórios Farmacêuticos",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "live-server --port=8000 --open=/index.html",
+    "build": "npm run optimize-images && npm run minify-css && npm run minify-js",
+    "optimize-images": "imagemin *.jpg *.png --out-dir=./optimized",
+    "minify-css": "cleancss -o dist/styles.min.css src/styles.css",
+    "minify-js": "uglifyjs src/script.js -o dist/script.min.js",
+    "lint": "eslint src/script.js",
+    "test": "npm run lint && npm run accessibility-test",
+    "accessibility-test": "pa11y index.html",
+    "deploy": "npm run build && git add . && git commit -m 'Deploy' && git push"
+  },
+  "keywords": [
+    "farmacia",
+    "controle-qualidade",
+    "laboratorio",
+    "analise-fisico-quimica",
+    "medicamentos",
+    "cosmeticos",
+    "RDC-67-2007",
+    "boas-praticas",
+    "guia-farmaceutico",
+    "educacao",
+    "interativo",
+    "visual"
+  ],
+  "author": {
+    "name": "Equipe de Estudantes de Farmácia",
+    "email": "contato@guiafarmaceutico.com",
+    "url": "https://guiafarmaceutico.com"
+  },
+  "contributors": [
+    {
+      "name": "Ana Flávia Barbosa Teixeira",
+      "role": "Desenvolvedora"
+    },
+    {
+      "name": "Carolina Silva de Azevedo",
+      "role": "Desenvolvedora"
+    },
+    {
+      "name": "Giovana Clara dos Santos Ribeiro",
+      "role": "Desenvolvedora"
+    },
+    {
+      "name": "Jessica Santos de Lima",
+      "role": "Desenvolvedora"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/farma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-usuario/farma/issues"
+  },
+  "homepage": "https://guiafarmaceutico.com",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "imagemin-cli": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "clean-css-cli": "^5.6.0",
+    "uglify-js": "^3.17.4",
+    "eslint": "^8.55.0",
+    "pa11y": "^6.2.3"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

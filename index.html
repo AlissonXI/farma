@@ -8,10 +8,36 @@
     <meta name="description" content="Guia completo, interativo e visualmente aprimorado sobre controle de qualidade em laboratórios farmacêuticos, abordando análises de sólidos e semissólidos, justificativa e objetivos.">
     <meta name="keywords" content="controle de qualidade, farmácia, laboratório, análise físico-química, medicamentos, cosméticos, RDC 67/2007, boas práticas de manipulação, guia farmacêutico, peso médio, dureza, friabilidade, desintegração, dissolução, ponto de fusão, teor, densidade, viscosidade, pH, espalhabilidade, extrusão, endotoxinas, contagem microbiológica, TCC Farmácia, guia visual, interativo">
     <meta name="author" content="Ana Flávia Barbosa Teixeira, Carolina Silva de Azevedo, Giovana Clara dos Santos Ribeiro, Jessica Santos de Lima">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:title" content="Guia Visual Interativo: Controle de Qualidade Farmacêutico">
+    <meta property="og:description" content="Guia completo, interativo e visualmente aprimorado sobre controle de qualidade em laboratórios farmacêuticos">
+    <meta property="og:image" content="lab-students-serra-dourada.jpg">
+    <meta property="og:url" content="https://guiafarmaceutico.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guia Visual Interativo: Controle de Qualidade Farmacêutico">
+    <meta name="twitter:description" content="Guia completo, interativo e visualmente aprimorado sobre controle de qualidade em laboratórios farmacêuticos">
+    <meta name="twitter:image" content="lab-students-serra-dourada.jpg">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⚕️%3C/text%3E%3C/svg%3E">
-    <!-- Consider adding fallback icons for wider compatibility -->
-    <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
-    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⚕️%3C/text%3E%3C/svg%3E">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#007bff">
+    <meta name="msapplication-TileColor" content="#007bff">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="canonical" href="https://guiafarmaceutico.com">
+    <link rel="alternate" hreflang="pt-BR" href="https://guiafarmaceutico.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preload" href="lab-students-serra-dourada.jpg" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
 
     <title>Guia Visual Interativo: Controle de Qualidade Farmacêutico</title>
 
@@ -2251,6 +2277,131 @@
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
 
     <script>
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+
+        // PWA Install Prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show install button if not already installed
+            const installButton = document.getElementById('installApp');
+            if (installButton) {
+                installButton.style.display = 'block';
+                installButton.addEventListener('click', () => {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('User accepted the install prompt');
+                        } else {
+                            console.log('User dismissed the install prompt');
+                        }
+                        deferredPrompt = null;
+                        installButton.style.display = 'none';
+                    });
+                });
+            }
+        });
+
+        // Online/Offline Status
+        window.addEventListener('online', () => {
+            showNotification('Conexão restaurada!', 'success');
+        });
+
+        window.addEventListener('offline', () => {
+            showNotification('Você está offline. Algumas funcionalidades podem estar indisponíveis.', 'warning');
+        });
+
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; max-width: 300px;';
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal.show');
+                modals.forEach(modal => {
+                    const modalInstance = bootstrap.Modal.getInstance(modal);
+                    if (modalInstance) modalInstance.hide();
+                });
+            }
+        });
+
+        // Focus management for accessibility
+        const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+        
+        function trapFocus(element) {
+            const focusableContent = element.querySelectorAll(focusableElements);
+            const firstFocusableElement = focusableContent[0];
+            const lastFocusableElement = focusableContent[focusableContent.length - 1];
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstFocusableElement) {
+                            lastFocusableElement.focus();
+                            e.preventDefault();
+                        }
+                    } else {
+                        if (document.activeElement === lastFocusableElement) {
+                            firstFocusableElement.focus();
+                            e.preventDefault();
+                        }
+                    }
+                }
+            });
+        }
+
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            if ('performance' in window) {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", function() {
 
             // Preloader fade out logic
