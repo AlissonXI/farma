@@ -618,6 +618,575 @@
             }
         }
 
+        /* Chatbot styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+        }
+
+        .chatbot-toggle {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chatbot-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .chatbot-toggle.active {
+            background: var(--primary-dark);
+        }
+
+        .chatbot-window {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .message.user-message {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .bot-message .message-content {
+            background: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .user-message .message-content {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .chatbot-input {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .chatbot-input button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+        }
+
+        .chatbot-suggestions {
+            padding: 10px 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .suggestion-btn {
+            background: var(--light-bg);
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .suggestion-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Video system styles */
+        .video-btn {
+            margin-left: 1rem;
+        }
+
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        .video-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .video-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .video-player {
+            margin-bottom: 1rem;
+        }
+
+        .video-placeholder {
+            position: relative;
+            background: #000;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        .video-overlay i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-playing {
+            height: 300px;
+            background: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .video-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+        }
+
+        .video-controls-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .video-timeline {
+            margin: 1rem 0;
+        }
+
+        .timeline-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .timeline-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-step:hover {
+            background: var(--light-bg);
+        }
+
+        .timeline-step.active {
+            background: var(--primary-light);
+            border-color: var(--primary-color);
+        }
+
+        .step-time {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .video-complete {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .video-complete i {
+            font-size: 4rem;
+            color: var(--success-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Dashboard styles */
+        .dashboard-btn {
+            margin-left: 0.5rem;
+        }
+
+        .dashboard-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        .dashboard-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            max-width: 1000px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-card {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0.5rem 0;
+        }
+
+        .stat-label {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
+        .dashboard-charts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-container {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .chart-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .bar-label {
+            width: 100px;
+            font-size: 0.9rem;
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 20px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+            position: relative;
+        }
+
+        .bar-value {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .bar-completion {
+            width: 50px;
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-medium);
+        }
+
+        .progress-chart {
+            display: flex;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .progress-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .progress-segment.beginners {
+            background: var(--success-color);
+        }
+
+        .progress-segment.intermediate {
+            background: var(--warning-color);
+        }
+
+        .progress-segment.advanced {
+            background: var(--danger-color);
+        }
+
+        .insights-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .insight-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: var(--border-radius);
+        }
+
+        .insight-item.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .insight-item.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .insight-item.info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .goal-card {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .goal-progress {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .progress-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: conic-gradient(var(--primary-color) 0deg, #eee 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .progress-circle::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .progress-circle span {
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .streak-display {
+            text-align: center;
+        }
+
+        .streak-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .streak-label {
+            font-size: 0.8rem;
+            color: var(--text-medium);
+        }
+
+        .dashboard-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        /* Responsive improvements for new features */
+        @media (max-width: 768px) {
+            .chatbot-window {
+                width: 95%;
+                right: 2.5%;
+                left: 2.5%;
+            }
+
+            .video-content {
+                width: 95%;
+                padding: 1rem;
+            }
+
+            .dashboard-content {
+                width: 95%;
+                padding: 1rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-charts {
+                grid-template-columns: 1fr;
+            }
+
+            .goals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-actions {
+                flex-direction: column;
+            }
+        }
+
         #preloader {
             position: fixed;
             top: 0;
@@ -2831,6 +3400,9 @@
     <script src="js/gamification.js" defer></script>
     <script src="js/favorites.js" defer></script>
     <script src="js/advanced-search.js" defer></script>
+    <script src="js/ai-chatbot.js" defer></script>
+    <script src="js/video-system.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
